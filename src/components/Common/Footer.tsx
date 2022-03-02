@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
-import AIcon from 'react-native-vector-icons/AntDesign';
-import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IIcon from 'react-native-vector-icons/Ionicons';
 import SIcon from 'react-native-vector-icons/SimpleLineIcons';
 import { theme } from '../../common/theme';
@@ -72,25 +69,25 @@ const Footer = ({ navigation }) => {
             style={styles.sideBtn}
             onPress={() => navigation.navigate('Rank')}
           >
-            <SIcon name="trophy" size={27} color="#0F0F0F" style={styles.icon} />
+            <SIcon name="trophy" size={27} color="#393939" style={styles.icon} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.leftBtn}>
-            <SIcon name="star" size={27} color="#0F0F0F" style={styles.icon} />
+            <SIcon name="star" size={27} color="#393939" style={styles.icon} />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.centerBtn}
             onPress={() => navigation.navigate('Home')}
           >
-            <SIcon name="home" size={27} color="#0F0F0F" style={styles.icon} />
+            <SIcon name="home" size={27} color="#393939" style={styles.icon} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.rightBtn}>
-            <IIcon name="md-shirt-outline" size={27} color="#0F0F0F" style={styles.icon} />
+            <IIcon name="md-shirt-outline" size={27} color="#393939" style={styles.icon} />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.sideBtn}
             onPress={() => navigation.navigate('MyPage')}
           >
-            <SIcon name="user" size={27} color="#0F0F0F" style={styles.icon} />
+            <SIcon name="user" size={27} color="#393939" style={styles.icon} />
           </TouchableOpacity>
         </View>
     </View>

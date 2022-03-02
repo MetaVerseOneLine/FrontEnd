@@ -1,50 +1,47 @@
 import React, { useContext } from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { images } from '../../common/images';
+import { Image, View, StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // Header component
 function Header({ navigation }) {
   // style
   const styles = StyleSheet.create({
     row: {
+      width: '100%',
       flexDirection: 'row',
-      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'space-between',
     },
     touchArea: {
-      marginTop: 7,
-    },
-    icon: {
-      flex: 1,
+      marginTop: 10,
     },
     img: {
-      width: '100%',
+      width: 100,
       height: 50,
       resizeMode: 'contain',
     },
     logo: {
-      flex: 9,
+      marginTop: 7,
     },
   });
 
 
-  // 알림, 로고, 마이페이지
   return (
     <View style={styles.row}>
       <TouchableOpacity
         style={styles.logo}
         onPress={() => navigation.navigate('Home')}
       >
-        Project
+        <Image source={require('../../../assets/images/logo.png')} style={styles.img} />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.touchArea}
-        onPress={() => navigation.navigate('MyPage')}
       >
-        <MaterialCommunityIcons
-          style={styles.icon}
-          name="account-circle-outline"
-          size={32}
-          color="#606dca"
+        <Icon
+          name="search"
+          size={27}
+          color="#393939"
         />
       </TouchableOpacity>
     </View>
