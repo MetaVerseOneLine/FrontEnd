@@ -17,7 +17,16 @@ const MainStack = () => {
     
     return (
         <View style={styles.container}>
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Navigator
+            initialRouteName="Tab"
+            screenOptions={({ navigation }) => ({
+              headerStyle: {
+                backgroundColor: '#ffffff',
+              },
+              headerLeft: () => null,
+              headerTitle: () => <Header navigation={navigation} />,
+            })} 
+            >
                 <Stack.Screen name="Tab" component={BottomTab} />
             </Stack.Navigator>
         </View>
