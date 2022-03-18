@@ -9,16 +9,13 @@ const Tab = createBottomTabNavigator();
 const BottomTab = () => {
   return (
     <Tab.Navigator
-      initialRouteName="First"
+      initialRouteName="Home"
       tabBar={(props) => <Footer {...props} />}
       screenOptions={{ headerShown: false }}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="MyPage" component={MyPageScreen} />
       <Tab.Screen name="Rank" component={RankScreen} />
-      <Tab.Screen name="First" component={FirstScreen} />
-      <Tab.Screen name="Register" component={RegisterScreen} />
-      <Tab.Screen name="Login" component={LoginScreen} />
     </Tab.Navigator>
   );
 };
