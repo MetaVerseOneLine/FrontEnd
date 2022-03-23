@@ -14,7 +14,7 @@ function Header({ navigation }) {
       justifyContent: 'space-between',
     },
     touchArea: {
-      marginTop: 10,
+      // paddingTop: 15,
     },
     img: {
       width: 100,
@@ -22,7 +22,7 @@ function Header({ navigation }) {
       resizeMode: 'contain',
     },
     logo: {
-      marginTop: 7,
+      paddingTop: 5,
     },
   });
 

@@ -12,6 +12,9 @@ const Footer = ({ navigation }) => {
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#FFFFFF',
+      margin: 0,
+      padding: 0,
+      flex: 0,
     },
     bar: {
       position: 'absolute',
