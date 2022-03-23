@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen, MyPageScreen, RankScreen } from '../screens';
+import { HomeScreen, MyPageScreen, RankScreen, FirstScreen, RegisterScreen, LoginScreen } from '../screens';
 import Footer from '../components/Common/Footer';
 
 const Tab = createBottomTabNavigator();
