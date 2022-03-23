@@ -43,6 +43,7 @@ const LoginScreen = ({ navigation }) => {
             marginBottom: 5,
             paddingHorizontal: 10,
             height: 40,
+            width: 210,
             borderRadius: 5,
             borderColor: 'gray',
             borderWidth: 1
@@ -54,7 +55,8 @@ const LoginScreen = ({ navigation }) => {
             margin: 10,
             borderRadius: 5,
             borderColor: 'black',
-            borderWidth: 1
+            borderWidth: 1,
+            width: 210,
         }
     });
     return (
@@ -64,16 +66,17 @@ const LoginScreen = ({ navigation }) => {
                 <TextInput
                     style={styles.Textinput}
                     onChangeText={(text) => { setId(text) }}
-                    placeholder="아이디                                          "
+                    placeholder="아이디"
                 />
                 <TextInput
+                    secureTextEntry={true}
                     style={styles.Textinput}
                     onChangeText={(text) => { setPassword(text) }}
-                    placeholder="비밀번호                                     "
+                    placeholder="비밀번호"
                 />
             </View>
             <View style={styles.LoginButtin}>
-                <Button title="              로그인              " color='#242424' onPress={() => navigation.navigate('Home')} />
+                <Button title="로그인" color='#242424' onPress={() => navigation.navigate('Home')} />
             </View>
             <Text onPress={() => navigation.navigate('Register')}>회원가입</Text>
         </View>
