@@ -76,7 +76,7 @@ const LoginScreen = ({ navigation }) => {
                 />
             </View>
             <View style={styles.LoginButtin}>
-                <Button title="로그인" color='#242424' onPress={() => navigation.navigate('Home')} />
+                <Button title="로그인" color='#242424' onPress={() => navigation.push()} />
             </View>
             <Text onPress={() => navigation.navigate('Register')}>회원가입</Text>
         </View>
