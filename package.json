@@ -12,6 +12,7 @@
   "dependencies": {
     "@expo/vector-icons": "^12.0.5",
     "@mui/icons-material": "^5.4.2",
+    "@react-native-async-storage/async-storage": "^1.17.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-material/core": "1.3.6",
     "@react-navigation/bottom-tabs": "^6.2.0",
@@ -25,15 +26,15 @@
     "native-base": "^3.3.6",
     "react": "17.0.2",
     "react-native": "0.67.2",
-
-    "react-native-paper": "^4.11.2",
     "react-native-cli": "2.0.1",
     "react-native-gesture-handler": "2.1.1",
     "react-native-onesignal": "4.3.7",
-
+    "react-native-paper": "^4.11.2",
+    "react-native-progress": "^5.0.0",
     "react-native-reanimated": "^2.4.1",
     "react-native-safe-area-context": "^3.4.0",
     "react-native-screens": "^3.11.1",
+    "react-native-svg": "^12.3.0",
     "react-native-vector-icons": "^9.1.0",
     "styled-components": "5.3.3"
   },

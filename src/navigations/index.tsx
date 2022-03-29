@@ -7,7 +7,7 @@ import AuthStack from './AuthStack';
 const Navigation = forwardRef((props, ref) => {
   return (
     <NavigationContainer>
-      <AuthStack />
+      <MainStack />
     </NavigationContainer>
   );
 });
