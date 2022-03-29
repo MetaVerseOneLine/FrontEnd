@@ -8,7 +8,7 @@ import Modal from '../components/Common/modal';
 const Navigation = forwardRef((props, ref) => {
   return (
     <NavigationContainer>
-      <AuthStack />
+      <MainStack />
     </NavigationContainer>
   );
 });
