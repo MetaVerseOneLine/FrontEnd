@@ -14,6 +14,7 @@ import Profile05 from '../../assets/images/profile/img5.png';
 import Profile06 from '../../assets/images/profile/img6.png';
 import Medal from '../../assets/images/achievement/medal.png';
 
+
 export const images = {
     logoImg: Logo,
     adImg: Adver,
