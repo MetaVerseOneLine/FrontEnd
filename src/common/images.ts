@@ -12,6 +12,7 @@ import Profile03 from '../../assets/images/profile/img3.png';
 import Profile04 from '../../assets/images/profile/img4.png';
 import Profile05 from '../../assets/images/profile/img5.png';
 import Profile06 from '../../assets/images/profile/img6.png';
+import DefaultImage from '../../assets/images/profile/defaultImage.png';
 
 export const images = {
     logoImg: Logo,
@@ -28,4 +29,5 @@ export const images = {
     pro04: Profile04,
     pro05: Profile05,
     pro06: Profile06,
+    defaultImage: DefaultImage,
 };
