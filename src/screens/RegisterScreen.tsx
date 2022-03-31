@@ -8,6 +8,7 @@ import axios from 'axios';
 import { images } from '../common/images';
 import { theme } from '../common/theme';
 import { IconButton, Colors } from 'react-native-paper';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const UselessTextInput = (props) => {
     return (
         <TextInput
@@ -26,28 +27,31 @@ const RegisterScreen = ({ navigation }) => {
     const [profile, setProfile] = useState('')
     const [image, setImage] = useState('../../assets/images/profile/img1.png');
 
-    const body = {
-        userId: id,
-        userPassword: password,
-        userName: nickName,
-        userContent: profile,
-        userImg: image,
+    const registerRequest = async () => {
+        axios.post('http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/User/Join', {
+            userId: id,
+            userPassword: password,
+            userName: nickName,
+            userContent: profile,
+            userImg: image,
+        }
+        ).then(
+            //localstorage에 저장해야한다.
+            res => {
+                console.log("OK")
+                if (res.data.statusCode == 201) {
+                    AsyncStorage.setItem('asyncUserId', id, () => { //
+                        console.log('유저 id저장')
+                    });
+                    alert('성공')
+                    navigation.navigate('Login')
+                }
+                else {
+                    alert('회원가입을 완료하기 위해서는 모두 입력해주시기 바랍니다.')
+                }
+            }
+        ).catch(err => console.log(err))
     }
-    // const registerRequest = async () => {
-    //     axios.post('https://localhost:5001/api/User/Join', body).then(
-    //         //localstorage에 저장해야한다.
-    //         res => {
-    //             console.log("OK")
-    //             if (res.data.tatusCode == 201) {
-    //                 alert('성공')
-    //                 navigation.navigate('Login')
-    //             }
-    //             else {
-    //                 alert('회원가입을 완료하기 위해서는 모두 입력해주시기 바랍니다.')
-    //             }
-    //         }
-    //     ).catch(err => console.log(err))
-    // }
 
     const [img1, setImg1] = useState<boolean>(false);
     const [img2, setImg2] = useState<boolean>(false);
@@ -487,7 +491,7 @@ const RegisterScreen = ({ navigation }) => {
                 />
             </View>
             <Button style={styles.RegisterButton} title="회원가입" color='#242424' onPress={() => {
-                //registerRequest()
+                registerRequest()
             }} />
             <Modal
                 isModal={isModal}
