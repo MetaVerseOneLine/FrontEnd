@@ -1,10 +1,30 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { StyleSheet, View, Text, Image, FlatList, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, Image, FlatList, ScrollView, BackHandler, Alert } from 'react-native';
 import { images } from '../common/images';
 import axios from 'axios';
 import WorldList from '../components/World/WorldList';
 
 const HomeScreen = ({ navigation }) => {
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert("Hold on!", "앱을 종료하시겠습니까?", [
+        {
+          text: "취소",
+          onPress: () => null,
+        },
+        { text: "확인", onPress: () => BackHandler.exitApp() }
+      ]);
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
   type world = {
     worldIdx: number,
     worldName: string,
@@ -81,7 +101,7 @@ const HomeScreen = ({ navigation }) => {
         )}
         style={styles.list}
         numColumns={2}
-      //nestedScrollEnabled
+        nestedScrollEnabled
       />
       <Text style={styles.text}>게임</Text>
       <FlatList
@@ -94,7 +114,7 @@ const HomeScreen = ({ navigation }) => {
         )}
         style={styles.list}
         numColumns={2}
-      //nestedScrollEnabled
+        nestedScrollEnabled
       />
     </ScrollView>
   );

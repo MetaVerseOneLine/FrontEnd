@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { images } from '../../common/images';
-import { Image, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, View, StyleSheet, TouchableOpacity, BackHandler } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import AuthStack from '../../navigations/AuthStack';
 // Header component
 function Header({ navigation }) {
   // style
@@ -26,6 +27,10 @@ function Header({ navigation }) {
     },
   });
 
+  useEffect(() => {
+
+  });
+
 
   return (
     <View style={styles.row}>
@@ -37,6 +42,15 @@ function Header({ navigation }) {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.touchArea}
+        onPress={() => {
+          AsyncStorage.setItem('asyncUserId', '', () => { //
+            console.log('로그아웃')
+          });
+          AsyncStorage.getItem('asyncUserId', (err, res) => {
+            console.log(res)
+          })
+          navigation.navigate('Auth')
+        }}
       >
         <Icon
           name="search"
