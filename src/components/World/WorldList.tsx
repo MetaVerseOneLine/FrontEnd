@@ -1,9 +1,7 @@
-import { Style } from '@mui/icons-material';
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { Button, Card, Title, Paragraph } from 'react-native-paper';
 import { images } from '../../common/images';
-import { theme } from '../../common/theme';
 
 const styles = StyleSheet.create({
     container: {
@@ -18,25 +16,25 @@ const styles = StyleSheet.create({
     },
   });
 
-const WorldList = ({world_idx, world_name, world_img, world_category}) => {
+const WorldList = ({worldIdx, worldName, worldImg, worldCategory}) => {
     var img;
-    switch (world_img) {
-        case 0:
-            img = images.koreanImg;
-            break;
+    switch (worldImg) {
         case 1:
-            img = images.mathImg;
-            break;
-        case 2:
-            img = images.socialImg;
-            break;
-        case 3:
             img = images.scienceImg;
             break;
-        case 4:
+        case 2:
             img = images.kartImg;
             break;
+        case 3:
+            img = images.koreanImg;
+            break;
+        case 4:
+            img = images.mathImg;
+            break;
         case 5:
+            img = images.socialImg;
+            break;
+        case 6:
             img = images.gameImg;
             break;
     }
@@ -45,7 +43,7 @@ const WorldList = ({world_idx, world_name, world_img, world_category}) => {
         <View style={styles.container}>
             <Card>
                 <Card.Cover source={img} style={{ width: 150, height: 130, resizeMode: 'contain' }}/>
-                <Title style={{marginTop: 10, marginLeft: 3, fontSize: 17}}>{world_name}</Title>
+                <Title style={{marginTop: 10, marginLeft: 3, fontSize: 17}}>{worldName}</Title>
             </Card>
         </View>
     );
