@@ -6,6 +6,7 @@ import Social from '../../assets/images/world/social.jpg';
 import Science from '../../assets/images/world/science.jpg';
 import Kart from '../../assets/images/world/kart.jpg';
 import Game from '../../assets/images/world/game.png';
+import Back from '../../assets/images/mypage/back.jpg';
 import Profile01 from '../../assets/images/profile/img1.png';
 import Profile02 from '../../assets/images/profile/img2.png';
 import Profile03 from '../../assets/images/profile/img3.png';
@@ -14,6 +15,7 @@ import Profile05 from '../../assets/images/profile/img5.png';
 import Profile06 from '../../assets/images/profile/img6.png';
 import DefaultImage from '../../assets/images/profile/defaultImage.png';
 import Medal from '../../assets/images/achievement/medal.png';
+import Sad from '../../assets/images/rank/sad.png'
 
 export const images = {
     logoImg: Logo,
@@ -24,6 +26,7 @@ export const images = {
     scienceImg: Science,
     kartImg: Kart,
     gameImg: Game,
+    backImg: Back,
     pro01: Profile01,
     pro02: Profile02,
     pro03: Profile03,
@@ -32,4 +35,5 @@ export const images = {
     pro06: Profile06,
     defaultImage: DefaultImage,
     medal: Medal,
+    sad: Sad,
 };
