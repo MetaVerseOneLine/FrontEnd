@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { StyleSheet, View, Text, Image, FlatList, ScrollView, BackHandler, Alert } from 'react-native';
+import { StyleSheet, View, Text, Image, FlatList, ScrollView, BackHandler, Alert, TouchableOpacity } from 'react-native';
 import { images } from '../common/images';
 import axios from 'axios';
 import WorldList from '../components/World/WorldList';
@@ -95,9 +95,11 @@ const HomeScreen = ({ navigation }) => {
         data={edu}
         keyExtractor={(item) => item.worldIdx.toString()}
         renderItem={({ item }) => (
-          <WorldList
-            {...item}
-          />
+          <TouchableOpacity onPress={() => navigation.navigate('EduWorldDetailScreen', {world : item.worldIdx})}>
+            <WorldList
+              {...item}
+            />
+          </TouchableOpacity>
         )}
         style={styles.list}
         numColumns={2}
@@ -108,9 +110,11 @@ const HomeScreen = ({ navigation }) => {
         data={game}
         keyExtractor={(item) => item.worldIdx.toString()}
         renderItem={({ item }) => (
-          <WorldList
-            {...item}
-          />
+          <TouchableOpacity onPress={() => navigation.navigate('GameWorldDetailScreen', {world : item.worldIdx})}>
+            <WorldList
+              {...item}
+            />
+          </TouchableOpacity>
         )}
         style={styles.list}
         numColumns={2}

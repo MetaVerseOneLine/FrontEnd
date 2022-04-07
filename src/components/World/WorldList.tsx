@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import { Button, Card, Title, Paragraph } from 'react-native-paper';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Button, Card, Title } from 'react-native-paper';
 import { images } from '../../common/images';
 
 const styles = StyleSheet.create({

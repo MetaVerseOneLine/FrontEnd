@@ -22,7 +22,7 @@ const AchievementList = ({ questContent }) => {
 
     return(
         <View style={styles.container}>
-            <Image source={require('../../../assets/images/achievement/medal.png')} style={styles.medalImg} />
+            {/* <Image source={require('../../../assets/images/achievement/medal.png')} style={styles.medalImg} /> */}
             <Text style={styles.questText}>{questContent}</Text>
         </View>
     );
