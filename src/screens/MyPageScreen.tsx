@@ -23,12 +23,12 @@ const MyPageScreen = ({ navigation }) => {
     questContent : string,
   };
 
-  // const [asyncUserId, setId] = useState<String>('');
-  // AsyncStorage.getItem('asyncUserId', (err, res) => {
-  //   setId(res);
-  // });
+  const [asyncUserId, setId] = useState<String>('');
+  AsyncStorage.getItem('asyncUserId', (err, res) => {
+    setId(res);
+  });
 
-  const asyncUserId = 'test';
+  // const asyncUserId = 'test';
 
   const [userInfo, setUserInfo] = useState<user>({
     userId : '',

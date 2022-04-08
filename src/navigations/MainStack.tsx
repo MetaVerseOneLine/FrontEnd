@@ -4,7 +4,6 @@ import { Header } from '../components';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomTab from './BottomTab';
-import { MyPageScreen } from '../screens';
 import AuthStack from './AuthStack';
 
 const Stack = createStackNavigator();

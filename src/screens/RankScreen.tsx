@@ -22,12 +22,12 @@ const RankScreen = ({ navigation }) => {
     thirdScore : number,
   };
 
-  // const [asyncUserId, setId] = useState<String>('');
-  // AsyncStorage.getItem('asyncUserId', (err, res) => {
-  //   setId(res);
-  // });
+  const [asyncUserId, setId] = useState<String>('');
+  AsyncStorage.getItem('asyncUserId', (err, res) => {
+    setId(res);
+  });
 
-  const asyncUserId = 'test';
+  // const asyncUserId = 'test';
 
   const [ranks, setResult] = useState<Array<rank>>([]);
 
