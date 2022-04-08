@@ -50,7 +50,7 @@ const HomeScreen = ({ navigation }) => {
 
   useEffect(() => {
     getWorlds();
-  });
+  }, []);
 
   if(worlds.length > 0) {
     for(var i = 0; i < worlds.length; i++){

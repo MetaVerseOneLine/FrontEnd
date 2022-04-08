@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, ScrollView, Button } from 'react-native';
 import { images } from '../common/images';
 import AchievementList from '../components/Achivement/AchievementList';
+
 
 const WorldDetailScreen = ({ route, navigation }) => {
   var { world } = route.params;
@@ -50,8 +51,8 @@ const WorldDetailScreen = ({ route, navigation }) => {
   };
 
   useEffect(() => {
-    if (asyncUserId.length != 0) getWorlds();
-  }, [asyncUserId]);
+    getWorlds();
+  }, [worldId]);
 
   var img;
   switch (eduWorlds.worldImg) {
@@ -92,32 +93,83 @@ const WorldDetailScreen = ({ route, navigation }) => {
         fontSize: 30,
         color: '#333333',
     },
+    contentTitle: {
+      fontSize: 20,
+      marginTop: 25,
+    },
     contentText: {
       fontSize: 18,
-      marginTop: 25,
+      marginTop: 10,
+    },
+    questTitle: {
+      fontSize: 20,
+      marginTop: 15,
+    },
+    listContainer: {
+      marginTop: 20,
+    },
+    noneContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: 30,
+    },
+    noneImg: {
+      width: 100,
+      height: 100,
+      resizeMode: 'contain',
+    },
+    noneText: {
+      fontSize: 18,
+      marginTop: 10,
+    },
+    playButton: {
+      alignItems: 'center',
+      marginTop: 20,
     }
   });
 
   return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Image source={img} style={styles.coverImg} />
         <View style={styles.detailContainer}>
             <View style={styles.titleContainer}>
               <Text style={styles.nameText}>{eduWorlds.worldName}</Text>
+              <Text style={styles.contentTitle}>[ 설명 ]</Text>
               <Text style={styles.contentText}>{eduWorlds.worldContent}</Text>
-              <FlatList
-                data={eduWorlds.doneQuest}
-                renderItem={({ item }) => (
-                <AchievementList
-                  {...item}
+              <Text style={styles.questTitle}>[ 달성한 퀘스트 ]</Text>
+              {eduWorlds.doneQuest.length > 0 ? (
+                <View style={styles.listContainer}>
+                  <FlatList
+                  data={eduWorlds.doneQuest}
+                  renderItem={({ item }) => (
+                  <AchievementList
+                    {...item}
+                  />
+                  )}
+                  // numColumns={2}
+                  nestedScrollEnabled
                 />
-                )}
-                // numColumns={2}
-                nestedScrollEnabled
-              />
+              </View>
+              ) : (
+                <View style={styles.noneContainer}>
+                  <Image source={require('../../assets/images/rank/sad.png')} style={styles.noneImg}/>
+                  <Text style={styles.noneText}>달성한 퀘스트가 없습니다!</Text>
+                </View>
+              )}
+              <View style={styles.playButton}>
+                <View style={{width: 200, height: 50}}>
+                  <Button
+                    title={'플레이'}
+                    // onPress={() => {
+                    //   this.setState({isVisible: true});
+                      // }}
+                    color={'#4641D9'}
+                  />
+                </View>
+              </View>
             </View>
         </View>
-      </View>
+      </ScrollView>
   );
 };
 
