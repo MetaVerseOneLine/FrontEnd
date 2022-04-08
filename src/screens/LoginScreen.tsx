@@ -25,8 +25,8 @@ const LoginScreen = ({ navigation }) => {
                     Alert.alert("Login", "로그인 되었습니다.", [
                         {
                             text: "확인", onPress: () => {
-                                setId('')
-                                setPassword('')
+                                // setId('')
+                                // setPassword('')
                                 navigation.navigate('Tab')
                             }
                         }

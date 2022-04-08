@@ -9,7 +9,7 @@ const Navigation = forwardRef((props, ref) => {
   const [userId, setUserId] = useState(null)
   useEffect(() => {
     AsyncStorage.getItem('asyncUserId', (err, result) => {
-      result != null ? setUserId(result) : null
+      setUserId(result)
     });
   })
   return (

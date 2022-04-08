@@ -25,7 +25,8 @@ const MainStack = () => {
           },
           headerLeft: () => null,
           headerTitle: () => <Header navigation={navigation} />,
-        })}
+        }
+        )}
       >
         <Stack.Screen name="Tab"
           component={BottomTab} />

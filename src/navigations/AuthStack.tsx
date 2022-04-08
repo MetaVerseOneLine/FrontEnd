@@ -33,8 +33,8 @@ const AuthStack = () => {
                 component={RegisterScreen}
                 options={{ headerShown: false }}
             />
-            {/* <Stack.Screen name="Tab"
-                component={BottomTab} /> */}
+            <Stack.Screen name="Tab"
+                component={BottomTab} />
         </Stack.Navigator>
     );
 }
