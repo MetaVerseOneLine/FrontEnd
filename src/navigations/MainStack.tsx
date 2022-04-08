@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component, useEffect } from 'react';
+import { StyleSheet, Text, View, Alert, BackHandler } from 'react-native';
 import { Header } from '../components';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomTab from './BottomTab';
-import { MyPageScreen } from '../screens';
-import AuthStack from './AuthStack';
+import { FirstScreen, LoginScreen, RegisterScreen } from '../screens';
 
 const Stack = createStackNavigator();
 
@@ -30,9 +29,18 @@ const MainStack = () => {
       >
         <Stack.Screen name="Tab"
           component={BottomTab} />
-        <Stack.Screen name="Auth"
-          component={AuthStack}
-          options={{ headerShown: false }} />
+        <Stack.Screen name="first"
+          component={FirstScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Register"
+          component={RegisterScreen}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </View>
   );

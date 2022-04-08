@@ -1,6 +1,6 @@
 import { AutoStoriesTwoTone } from '@mui/icons-material';
 import React, { useState, useEffect } from 'react';
-import { TextInput, StyleSheet, View, Text, Image } from 'react-native';
+import { TextInput, StyleSheet, View, Text, Image, Alert, BackHandler } from 'react-native';
 import { Button } from "@react-native-material/core";
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -21,16 +21,21 @@ const LoginScreen = ({ navigation }) => {
             res => {
                 console.log("OK")
                 if (res.data.statusCode == 201) {
-                    alert('성공')
                     AsyncStorage.setItem('asyncUserId', id)
-                    AsyncStorage.getItem('asyncUserId', (err, res) => {
-                        console.log(res)
-                    })
-                    navigation.navigate('stack')
+                    Alert.alert("Login", "로그인 되었습니다.", [
+                        {
+                            text: "확인", onPress: () => {
+                                setId('')
+                                setPassword('')
+                                navigation.navigate('Tab')
+                            }
+                        }
+                    ]);
                 }
-                else {
-                    alert('회원가입을 완료하기 위해서는 모두 입력해주시기 바랍니다.')
+                else if (res.data.statusCode == 202) {
+                    alert('id가 없습니다 ')
                 }
+
             }
         ).catch(err => console.log(err))
     }
@@ -95,12 +100,14 @@ const LoginScreen = ({ navigation }) => {
                 <TextInput
                     style={styles.Textinput}
                     onChangeText={(text) => { setId(text) }}
+                    value={id}
                     placeholder="아이디"
                 />
                 <TextInput
                     secureTextEntry={true}
                     style={styles.Textinput}
                     onChangeText={(text) => { setPassword(text) }}
+                    value={password}
                     placeholder="비밀번호"
                 />
             </View>
