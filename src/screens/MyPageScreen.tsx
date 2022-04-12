@@ -41,7 +41,7 @@ const MyPageScreen = ({ navigation }) => {
     doneQuest : [],
     total : 0,
   });
-
+  
   const getUser = async () => {
     axios
       .get(`http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/User/${asyncUserId}`)
@@ -135,18 +135,18 @@ const MyPageScreen = ({ navigation }) => {
       justifyContent: 'center',
       marginBottom: 0,
     },
-    profileImg : {
+    profileImg: {
       width: '100%',
       height: 110,
     },
-    name : {
+    name: {
       fontSize: 22,
     },
-    content : {
+    content: {
       fontSize: 15,
       marginTop: 5,
     },
-    achTitle : {
+    achTitle: {
       marginLeft: 15,
       marginVertical: 10,
       fontSize: 20,
@@ -174,7 +174,7 @@ const MyPageScreen = ({ navigation }) => {
       <View style={styles.myPageContent}>
         <View style={styles.profileContent}>
           <View style={styles.iconImg}>
-            <Image source={img} style={styles.profileImg}/>
+            <Image source={img} style={styles.profileImg} />
           </View>
           <Text style={styles.name}>{userInfo.userName}</Text>
           <Text style={styles.content}>{userInfo.userContent}</Text>

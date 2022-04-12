@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { images } from '../../common/images';
-import { Image, View, StyleSheet, TouchableOpacity, BackHandler } from 'react-native';
+import { Image, View, StyleSheet, TouchableOpacity, BackHandler, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AuthStack from '../../navigations/AuthStack';
@@ -49,7 +49,13 @@ function Header({ navigation }) {
           AsyncStorage.getItem('asyncUserId', (err, res) => {
             console.log(res)
           })
-          navigation.navigate('Auth')
+          Alert.alert("로그아웃 되었습니다.", "종료하시겠습니까?", [
+            {
+              text: "취소",
+              onPress: () => navigation.replace('first')
+            },
+            { text: "확인", onPress: () => BackHandler.exitApp() }
+          ]);
         }}
       >
         <Icon

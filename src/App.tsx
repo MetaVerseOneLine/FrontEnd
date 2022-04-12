@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Alert, BackHandler } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import Navigation from './navigations';
 import { theme } from './common/theme';
 
 const App = () => {
-  const [state, setState] = useState({});
   const childRef = useRef(null);
 
   return (

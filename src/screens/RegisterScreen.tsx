@@ -25,17 +25,27 @@ const RegisterScreen = ({ navigation }) => {
     const [password, setPassword] = useState('');
     const [passwordConfirm, setComfirm] = useState('')
     const [profile, setProfile] = useState('')
+    const [matched, setMatch] = useState(false)
     const [image, setImage] = useState('../../assets/images/profile/img1.png');
 
     const registerRequest = async () => {
+        if (password.length < 8 || passwordConfirm.length < 8) {
+            alert('비밀번호 길이가 짧습니다')
+            return
+        }
+
+        if (password != passwordConfirm) {
+            alert('비밀번호가 일치하지 않습니다.')
+            return
+        }
+
         axios.post('http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/User/Join', {
             userId: id,
             userPassword: password,
             userName: nickName,
             userContent: profile,
             userImg: image,
-        }
-        ).then(
+        }).then(
             //localstorage에 저장해야한다.
             res => {
                 console.log("OK")
@@ -46,8 +56,30 @@ const RegisterScreen = ({ navigation }) => {
                     alert('성공')
                     navigation.navigate('Login')
                 }
+                else if (matched == false) {
+                    alert('아이디 확인 바랍니다.')
+                }
                 else {
-                    alert('회원가입을 완료하기 위해서는 모두 입력해주시기 바랍니다.')
+                    alert('회원가입을 위해서는 모든 내용을 입력해주세요.')
+                }
+            }
+        ).catch(err => console.log(err))
+    }
+
+    const confirmId = async () => {
+        axios.post('http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/User/Check', {
+            userId: id,
+            userPassword: password,
+        }).then(
+            res => {
+                console.log("OK")
+                if (res.data.statusCode == 201) {
+                    alert('사용 가능한 아이디입니다.')
+                    setMatch(true)
+                }
+                else {
+                    alert('이미 가입 된 아이디입니다.')
+                    setMatch(false)
                 }
             }
         ).catch(err => console.log(err))
@@ -170,6 +202,9 @@ const RegisterScreen = ({ navigation }) => {
             } else if (img6) {
                 img = 'img6';
                 setImage('6');
+            }
+            else {
+                setImage('1')
             }
             props.close();
         };
@@ -452,7 +487,7 @@ const RegisterScreen = ({ navigation }) => {
                     onChangeText={(text) => { setId(text) }}
                     placeholder="아이디                "
                 />
-                <Button style={styles.confirmButton} title="중복확인" color='#242424' />
+                <Button style={styles.confirmButton} title="중복확인" color='#242424' onPress={() => confirmId()} />
             </View>
             <TextInput
                 style={styles.TextinputPassword}

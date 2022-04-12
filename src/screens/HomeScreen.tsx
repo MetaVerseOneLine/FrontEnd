@@ -4,7 +4,7 @@ import { images } from '../common/images';
 import axios from 'axios';
 import WorldList from '../components/World/WorldList';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, Login }) => {
   useEffect(() => {
     const backAction = () => {
       Alert.alert("Hold on!", "앱을 종료하시겠습니까?", [
@@ -103,7 +103,7 @@ const HomeScreen = ({ navigation }) => {
         )}
         style={styles.list}
         numColumns={2}
-        nestedScrollEnabled
+      //nestedScrollEnabled
       />
       <Text style={styles.text}>게임</Text>
       <FlatList
@@ -118,7 +118,7 @@ const HomeScreen = ({ navigation }) => {
         )}
         style={styles.list}
         numColumns={2}
-        nestedScrollEnabled
+      //nestedScrollEnabled
       />
     </ScrollView>
   );

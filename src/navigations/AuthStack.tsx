@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Header } from '../components';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomTab from './BottomTab';
-import { FirstScreen, LoginScreen, RegisterScreen } from '../screens';
+import { FirstScreen, LoginScreen, RegisterScreen, HomeScreen, MyPageScreen, RankScreen } from '../screens';
 import MainStack from './MainStack';
 
 const Stack = createStackNavigator();
@@ -11,7 +11,16 @@ const Stack = createStackNavigator();
 const AuthStack = () => {
 
     return (
-        <Stack.Navigator initialRouteName='first'>
+        <Stack.Navigator
+            initialRouteName="first"
+            screenOptions={({ navigation }) => ({
+                headerStyle: {
+                    backgroundColor: '#ffffff',
+                },
+                headerLeft: () => null,
+                headerTitle: () => <Header navigation={navigation} />,
+            })}
+        >
             <Stack.Screen name="first"
                 component={FirstScreen}
                 options={{ headerShown: false }}
@@ -24,10 +33,8 @@ const AuthStack = () => {
                 component={RegisterScreen}
                 options={{ headerShown: false }}
             />
-            <Stack.Screen name="stack"
-                component={MainStack}
-                options={{ headerShown: false }}
-            />
+            <Stack.Screen name="Tab"
+                component={BottomTab} />
         </Stack.Navigator>
     );
 }
