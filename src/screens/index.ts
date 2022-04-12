@@ -4,6 +4,8 @@ import RankScreen from './RankScreen';
 import FirstScreen from './FirstScreen';
 import RegisterScreen from './RegisterScreen';
 import LoginScreen from './LoginScreen';
+import EduWorldDetailScreen from './EduWorldDetailScreen';
+import GameWorldDetailScreen from './GameWorldDetailScreen';
 
 export {
     HomeScreen,
@@ -12,4 +14,6 @@ export {
     FirstScreen,
     RegisterScreen,
     LoginScreen,
+    EduWorldDetailScreen,
+    GameWorldDetailScreen
 };

@@ -18,7 +18,7 @@
     "@react-navigation/bottom-tabs": "^6.2.0",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/stack": "^6.1.1",
-    "@types/node": "17.0.23",
+    "@types/node": "^17.0.23",
     "@types/react": "^17.0.39",
     "@types/react-native": "^0.66.16",
     "axios": "^0.26.1",

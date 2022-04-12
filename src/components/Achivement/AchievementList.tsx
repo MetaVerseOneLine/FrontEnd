@@ -2,28 +2,25 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { images } from '../../common/images';
 
-const AchievementList = ({ Quest_content }) => {
+const AchievementList = ({ questContent }) => {
     const styles = StyleSheet.create({
         container: {
           backgroundColor: '#FFFFFF',
-          alignItems: 'center',
-          marginHorizontal: 40,
-          marginTop: 10,
-          padding: 4,
-        },
-        medalImg: {
-          width: 100,
-          resizeMode: 'contain',
+          borderBottomColor: '#CCCCCC',
+          borderTopColor: '#CCCCCC',
+          borderTopWidth: 1,
+          // paddingVertical: 12,
+          marginRight: 10,
         },
         questText : {
           fontSize: 17,
+          padding: 20,
         },
       });
 
     return(
         <View style={styles.container}>
-            <Image source={require('../../../assets/images/achievement/medal.png')} style={styles.medalImg} />
-            <Text style={styles.questText}>{Quest_content}</Text>
+          <Text style={styles.questText}>{questContent}</Text>
         </View>
     );
 };
