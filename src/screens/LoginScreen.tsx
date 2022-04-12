@@ -32,8 +32,12 @@ const LoginScreen = ({ navigation }) => {
                         }
                     ]);
                 }
-                else if (res.data.statusCode == 202) {
-                    alert('id가 없습니다 ')
+                else {
+                    Alert.alert("오류", `${res.data.message}`, [
+                        {
+                            text: "확인",
+                        }
+                    ]);
                 }
 
             }
