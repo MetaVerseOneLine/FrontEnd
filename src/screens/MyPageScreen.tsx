@@ -85,21 +85,24 @@ const MyPageScreen = ({ navigation }) => {
   var img;
   switch (userInfo.userImg) {
       case '1':
-          img = images.pro01;
+          img = images.defaultImage;
           break;
       case '2':
-          img = images.pro02;
+          img = images.pro01;
           break;
       case '3':
-          img = images.pro03;
+          img = images.pro02;
           break;
       case '4':
-          img = images.pro04;
+          img = images.pro03;
           break;
       case '5':
-          img = images.pro05;
+          img = images.pro04;
           break;
       case '6':
+          img = images.pro05;
+          break;
+      case '7':
           img = images.pro06;
           break;
   }
@@ -138,6 +141,7 @@ const MyPageScreen = ({ navigation }) => {
     profileImg: {
       width: '100%',
       height: 110,
+      resizeMode: 'contain',
     },
     name: {
       fontSize: 22,

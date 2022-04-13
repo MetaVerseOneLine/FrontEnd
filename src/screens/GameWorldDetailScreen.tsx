@@ -12,19 +12,19 @@ const WorldDetailScreen = ({ route, navigation }) => {
     worldName : string,
     firstUserId : string,
     firstUserName : string,
-    firstScore : number,
+    firstScore : string,
     secondUserId : string,
     secondUserName : string,
-    secondScore : number,
+    secondScore : string,
     thirdUserId : string,
     thirdUserName : string,
-    thirdScore : number,
+    thirdScore : string,
     forthUserId : string,
     forthUserName : string,
-    forthScore : number,
+    forthScore : string,
     fifthUserId : string,
     fifthUserName : string,
-    fifthScore : number,
+    fifthScore : string,
   };
 
   type gameWorld = {
@@ -48,19 +48,19 @@ const WorldDetailScreen = ({ route, navigation }) => {
       worldName : '',
       firstUserId : '',
       firstUserName : '',
-      firstScore : 0,
+      firstScore : '',
       secondUserId : '',
       secondUserName : '',
-      secondScore : 0,
+      secondScore : '',
       thirdUserId : '',
       thirdUserName : '',
-      thirdScore : 0,
+      thirdScore : '',
       forthUserId : '',
       forthUserName : '',
-      forthScore : 0,
+      forthScore : '',
       fifthUserId : '',
       fifthUserName : '',
-      fifthScore : 0,
+      fifthScore : '',
     },
   });
 
@@ -82,7 +82,7 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   useEffect(() => {
     getWorlds();
-  }, [worldId]);
+  });
 
   var img;
   switch (gameWorlds.worldImg) {

@@ -9,17 +9,17 @@ const RankScreen = ({ navigation }) => {
     userId : string,
     userName : string,
     worldName : string,
-    score : number,
+    score : string,
     rank: number,
     firstUserId : string,
     firstUserName : string,
-    firstScore : number,
+    firstScore : string,
     secondUserId : string,
     secondUserName : string,
     secondScore : number,
     thirdUserId : string,
     thirdUserName : string,
-    thirdScore : number,
+    thirdScore : string,
   };
 
   const [asyncUserId, setId] = useState<String>('');

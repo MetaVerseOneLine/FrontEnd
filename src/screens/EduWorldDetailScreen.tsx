@@ -52,7 +52,7 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   useEffect(() => {
     getWorlds();
-  }, [worldId]);
+  });
 
   var img;
   switch (eduWorlds.worldImg) {
