@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { images } from '../../common/images';
 import { Image, View, StyleSheet, TouchableOpacity, BackHandler, Alert } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AuthStack from '../../navigations/AuthStack';
 // Header component
@@ -59,8 +59,8 @@ function Header({ navigation }) {
         }}
       >
         <Icon
-          name="search"
-          size={27}
+          name="logout"
+          size={30}
           color="#393939"
         />
       </TouchableOpacity>

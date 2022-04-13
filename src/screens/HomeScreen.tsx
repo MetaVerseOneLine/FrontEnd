@@ -69,6 +69,7 @@ const HomeScreen = ({ navigation, Login }) => {
       backgroundColor: '#FFFFFF',
       margin: 0,
       padding: 0,
+      width: '100%',
     },
     img: {
       width: '100%',
