@@ -2,10 +2,32 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import IIcon from 'react-native-vector-icons/Ionicons';
 import SIcon from 'react-native-vector-icons/SimpleLineIcons';
-import { theme } from '../../common/theme';
+import FIcon from 'react-native-vector-icons/FontAwesome';
 
 // Footer Component
 const Footer = ({ navigation }) => {
+  const [isRank, setRank] = useState<boolean>(false);
+  const [isHome, setHome] = useState<boolean>(true);
+  const [isMy, setMy] = useState<boolean>(false);
+
+  const pressRank = () => {
+    setRank(true);
+    setHome(false);
+    setMy(false);
+    navigation.navigate('Rank');
+  }
+  const pressHome = () => {
+    setRank(false);
+    setHome(true);
+    setMy(false);
+    navigation.navigate('Home');
+  }
+  const pressMy = () => {
+    setRank(false);
+    setHome(false);
+    setMy(true);
+    navigation.navigate('MyPage');
+  }
   const styles = StyleSheet.create({
     container: {
       height: 90,
@@ -69,28 +91,40 @@ const Footer = ({ navigation }) => {
       <View style={styles.bar}></View>
         <View style={styles.btnContainer}>
           <TouchableOpacity
-            style={styles.sideBtn}
-            onPress={() => navigation.navigate('Rank')}
-          >
-            <SIcon name="trophy" size={27} color="#393939" style={styles.icon} />
+          style={styles.sideBtn}
+          onPress={pressRank}
+        >
+          {isRank ? (
+            <IIcon name="trophy" size={27} color="#393939" style={styles.icon} />
+          ) : (
+            <IIcon name="trophy-outline" size={27} color="#393939" style={styles.icon} />
+          )}
           </TouchableOpacity>
           <TouchableOpacity style={styles.leftBtn}>
             <SIcon name="star" size={27} color="#393939" style={styles.icon} />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.centerBtn}
-            onPress={() => navigation.navigate('Home')}
-          >
-            <SIcon name="home" size={27} color="#393939" style={styles.icon} />
+          style={styles.centerBtn}
+          onPress={pressHome}
+        >
+          {isHome ? (
+            <IIcon name="home" size={27} color="#393939" style={styles.icon} />
+          ) : (
+            <IIcon name="home-outline" size={27} color="#393939" style={styles.icon} />
+            )}
           </TouchableOpacity>
           <TouchableOpacity style={styles.rightBtn}>
             <IIcon name="md-shirt-outline" size={27} color="#393939" style={styles.icon} />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.sideBtn}
-            onPress={() => navigation.navigate('MyPage')}
+            onPress={pressMy}
           >
-            <SIcon name="user" size={27} color="#393939" style={styles.icon} />
+          {isMy ? (
+            <FIcon name="user" size={27} color="#393939" style={styles.icon} />
+          ) : (
+            <FIcon name="user-o" size={27} color="#393939" style={styles.icon} />
+          )}
           </TouchableOpacity>
         </View>
     </View>
