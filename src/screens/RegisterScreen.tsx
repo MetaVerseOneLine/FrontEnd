@@ -26,11 +26,11 @@ const RegisterScreen = ({ navigation }) => {
     const [passwordConfirm, setComfirm] = useState('')
     const [profile, setProfile] = useState('')
     const [matched, setMatch] = useState(false)
-    const [image, setImage] = useState('../../assets/images/profile/img1.png');
+    const [image, setImage] = useState('1');
 
     const registerRequest = async () => {
         if (password.length < 8 || passwordConfirm.length < 8) {
-            alert('비밀번호 길이가 짧습니다')
+            alert('비밀번호를 8자리 이상 사용해주세요.')
             return
         }
 
@@ -102,25 +102,25 @@ const RegisterScreen = ({ navigation }) => {
         var img;
         switch (image) {
             case '1':
-                img = images.pro01;
+                img = images.defaultImage;
                 break;
             case '2':
-                img = images.pro02;
+                img = images.pro01;
                 break;
             case '3':
-                img = images.pro03;
+                img = images.pro02;
                 break;
             case '4':
-                img = images.pro04;
+                img = images.pro03;
                 break;
             case '5':
-                img = images.pro05;
+                img = images.pro04;
                 break;
             case '6':
-                img = images.pro06;
+                img = images.pro05;
                 break;
-            default:
-                img = images.defaultImage;
+            case '7':
+                img = images.pro06;
                 break;
         }
         return (

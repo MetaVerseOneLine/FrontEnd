@@ -8,19 +8,19 @@ import AchievementList from '../components/Achivement/AchievementList';
 
 const MyPageScreen = ({ navigation }) => {
   type user = {
-    userId : string,
-    userName : string,
-    userContent : string,
-    userImg : string,
+    userId: string,
+    userName: string,
+    userContent: string,
+    userImg: string,
   };
 
   type achievement = {
-    doneQuest : Array<quest>,
-    total : number,
+    doneQuest: Array<quest>,
+    total: number,
   };
 
   type quest = {
-    questContent : string,
+    questContent: string,
   };
 
   const [asyncUserId, setId] = useState<String>('');
@@ -31,17 +31,17 @@ const MyPageScreen = ({ navigation }) => {
   // const asyncUserId = 'test';
 
   const [userInfo, setUserInfo] = useState<user>({
-    userId : '',
-    userName : '',
-    userContent : '',
-    userImg : '',
+    userId: '',
+    userName: '',
+    userContent: '',
+    userImg: '',
   });
 
   const [achInfo, setAchInfo] = useState<achievement>({
-    doneQuest : [],
-    total : 0,
+    doneQuest: [],
+    total: 0,
   });
-  
+
   const getUser = async () => {
     axios
       .get(`http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/User/${asyncUserId}`)
@@ -53,7 +53,7 @@ const MyPageScreen = ({ navigation }) => {
         console.error(e); // 에러표시
       });
   };
-  
+
   const getAchivement = async () => {
     axios
       .get(`http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/Achievement/${asyncUserId}`)
@@ -75,7 +75,7 @@ const MyPageScreen = ({ navigation }) => {
   }, [asyncUserId]);
 
   var percent;
-  if(achInfo.total == 0) {
+  if (achInfo.total == 0) {
     percent = 0;
   }
   else {
@@ -84,24 +84,24 @@ const MyPageScreen = ({ navigation }) => {
 
   var img;
   switch (userInfo.userImg) {
-      case '1':
-          img = images.pro01;
-          break;
-      case '2':
-          img = images.pro02;
-          break;
-      case '3':
-          img = images.pro03;
-          break;
-      case '4':
-          img = images.pro04;
-          break;
-      case '5':
-          img = images.pro05;
-          break;
-      case '6':
-          img = images.pro06;
-          break;
+    case '1':
+      img = images.pro01;
+      break;
+    case '2':
+      img = images.pro02;
+      break;
+    case '3':
+      img = images.pro03;
+      break;
+    case '4':
+      img = images.pro04;
+      break;
+    case '5':
+      img = images.pro05;
+      break;
+    case '6':
+      img = images.pro06;
+      break;
   }
 
   const styles = StyleSheet.create({
