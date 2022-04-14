@@ -28,13 +28,13 @@ const WorldDetailScreen = ({ route, navigation }) => {
   };
 
   type gameWorld = {
-    worldIdx : number,
-    worldName : string,
-    worldContent : string,
-    worldSceneId : number,
-    worldCategory : string,
-    worldImg : number,
-    worldRank5 : rank,
+    worldIdx: number,
+    worldName: string,
+    worldContent: string,
+    worldSceneId: number,
+    worldCategory: string,
+    worldImg: number,
+    worldRank5: rank,
   };
 
   const [gameWorlds, setResult] = useState<gameWorld>({
@@ -71,13 +71,13 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   const getWorlds = async () => {
     axios.post('http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/World/Detail', {
-            worldIdx: worldId,
-            userId: asyncUserId,
-        }).then(
-            res => {
-              setResult(res.data);
-            }
-        ).catch(err => console.log(err))
+      worldIdx: worldId,
+      userId: asyncUserId,
+    }).then(
+      res => {
+        setResult(res.data);
+      }
+    ).catch(err => console.log(err))
   };
 
   useEffect(() => {
@@ -86,10 +86,10 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   var img;
   switch (gameWorlds.worldImg) {
-  case 2:
+    case 2:
       img = images.kartImg;
       break;
-  case 6:
+    case 6:
       img = images.gameImg;
       break;
   }
@@ -102,20 +102,20 @@ const WorldDetailScreen = ({ route, navigation }) => {
       height: '100%',
     },
     coverImg: {
-        width: '100%',
-        height: 200,
-        opacity: 0.6,
+      width: '100%',
+      height: 200,
+      opacity: 0.6,
     },
     detailContainer: {
-        marginLeft: 10,
+      marginLeft: 10,
     },
     titleContainer: {
-        marginTop: 30,
-        top: -80,
+      marginTop: 30,
+      top: -80,
     },
     nameText: {
-        fontSize: 30,
-        color: '#333333',
+      fontSize: 30,
+      color: '#333333',
     },
     contentTitle: {
       fontSize: 20,
@@ -139,11 +139,11 @@ const WorldDetailScreen = ({ route, navigation }) => {
       padding: 10,
     },
     rankTitle: {
-        fontSize: 20,
-        marginVertical: 12,
+      fontSize: 20,
+      marginVertical: 12,
     },
     rankText: {
-        fontSize: 17,
+      fontSize: 17,
     },
     playButton: {
       alignItems: 'center',
@@ -152,58 +152,58 @@ const WorldDetailScreen = ({ route, navigation }) => {
   });
 
   return (
-      <ScrollView style={styles.container}>
-        <Image source={img} style={styles.coverImg} />
-        <View style={styles.detailContainer}>
-            <View style={styles.titleContainer}>
-              <Text style={styles.nameText}>{gameWorlds.worldName}</Text>
-              <Text style={styles.contentTitle}>[ 설명 ]</Text>
-              <Text style={styles.contentText}>{gameWorlds.worldContent}</Text>
-              <Text style={styles.questTitle}>[ Top 5 ]</Text>
-              <View style={styles.rankBox}>
-                <Text style={styles.rankText}>순위</Text>
-                <Text style={styles.rankText}>이름</Text>
-                <Text style={styles.rankText}>점수</Text>
-              </View>
-              <View style={styles.rankBox}>
-                <Text style={styles.rankText}>1</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.firstUserName}</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.firstScore}</Text>
-              </View>
-              <View style={styles.rankBox}>
-                <Text style={styles.rankText}>2</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.secondUserName}</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.secondScore}</Text>
-              </View>
-              <View style={styles.rankBox}>
-                <Text style={styles.rankText}>3</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.thirdUserName}</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.thirdScore}</Text>
-              </View>
-              <View style={styles.rankBox}>
-                <Text style={styles.rankText}>4</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.forthUserName}</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.forthScore}</Text>
-              </View>
-              <View style={styles.rankBox}>
-                <Text style={styles.rankText}>5</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthUserName}</Text>
-                <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthScore}</Text>
-              </View>
-              <View style={styles.playButton}>
-                <View style={{width: 200, height: 50}}>
-                  <Button
-                    title={'플레이'}
-                    // onPress={() => {
-                    //   this.setState({isVisible: true});
-                      // }}
-                    color={'#4641D9'}
-                  />
-                </View>
-              </View>
+    <ScrollView style={styles.container}>
+      <Image source={img} style={styles.coverImg} />
+      <View style={styles.detailContainer}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.nameText}>{gameWorlds.worldName}</Text>
+          <Text style={styles.contentTitle}>[ 설명 ]</Text>
+          <Text style={styles.contentText}>{gameWorlds.worldContent}</Text>
+          <Text style={styles.questTitle}>[ Top 5 ]</Text>
+          <View style={styles.rankBox}>
+            <Text style={styles.rankText}>순위</Text>
+            <Text style={styles.rankText}>이름</Text>
+            <Text style={styles.rankText}>점수</Text>
+          </View>
+          <View style={styles.rankBox}>
+            <Text style={styles.rankText}>1</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.firstUserName}</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.firstScore}</Text>
+          </View>
+          <View style={styles.rankBox}>
+            <Text style={styles.rankText}>2</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.secondUserName}</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.secondScore}</Text>
+          </View>
+          <View style={styles.rankBox}>
+            <Text style={styles.rankText}>3</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.thirdUserName}</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.thirdScore}</Text>
+          </View>
+          <View style={styles.rankBox}>
+            <Text style={styles.rankText}>4</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.forthUserName}</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.forthScore}</Text>
+          </View>
+          <View style={styles.rankBox}>
+            <Text style={styles.rankText}>5</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthUserName}</Text>
+            <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthScore}</Text>
+          </View>
+          <View style={styles.playButton}>
+            <View style={{ width: 200, height: 50 }}>
+              <Button
+                title={'플레이'}
+                onPress={() => {
+                  navigation.navigate('Empty')
+                }}
+                color={'#4641D9'}
+              />
             </View>
+          </View>
         </View>
-      </ScrollView>
+      </View>
+    </ScrollView>
   );
 };
 

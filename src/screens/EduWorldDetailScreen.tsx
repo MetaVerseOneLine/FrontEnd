@@ -11,27 +11,27 @@ const WorldDetailScreen = ({ route, navigation }) => {
   var worldId = JSON.stringify(world);
 
   type quest = {
-    questContent : string,
+    questContent: string,
   };
 
   type eduWorld = {
-    worldIdx : number,
-    worldName : string,
-    worldContent : string,
-    worldSceneId : number,
-    worldCategory : string,
-    worldImg : number,
-    doneQuest : Array<quest>,
+    worldIdx: number,
+    worldName: string,
+    worldContent: string,
+    worldSceneId: number,
+    worldCategory: string,
+    worldImg: number,
+    doneQuest: Array<quest>,
   };
 
   const [eduWorlds, setResult] = useState<eduWorld>({
-    worldIdx : 0,
-    worldName : '',
-    worldContent : '',
-    worldSceneId : 0,
-    worldCategory : '',
-    worldImg : 0,
-    doneQuest : [],
+    worldIdx: 0,
+    worldName: '',
+    worldContent: '',
+    worldSceneId: 0,
+    worldCategory: '',
+    worldImg: 0,
+    doneQuest: [],
   });
 
   const [asyncUserId, setId] = useState<String>('');
@@ -41,13 +41,13 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   const getWorlds = async () => {
     axios.post('http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/World/Detail', {
-            worldIdx: worldId,
-            userId: asyncUserId,
-        })
-        .then(({ data }) => {
-          setResult(data);
-        })
-        .catch(err => console.log(err))
+      worldIdx: worldId,
+      userId: asyncUserId,
+    })
+      .then(({ data }) => {
+        setResult(data);
+      })
+      .catch(err => console.log(err))
   };
 
   useEffect(() => {
@@ -56,16 +56,16 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   var img;
   switch (eduWorlds.worldImg) {
-  case 1:
+    case 1:
       img = images.scienceImg;
       break;
-  case 3:
+    case 3:
       img = images.koreanImg;
       break;
-  case 4:
+    case 4:
       img = images.mathImg;
       break;
-  case 5:
+    case 5:
       img = images.socialImg;
       break;
   }
@@ -78,20 +78,20 @@ const WorldDetailScreen = ({ route, navigation }) => {
       height: '100%',
     },
     coverImg: {
-        width: '100%',
-        height: 200,
-        opacity: 0.6,
+      width: '100%',
+      height: 200,
+      opacity: 0.6,
     },
     detailContainer: {
-        marginLeft: 10,
+      marginLeft: 10,
     },
     titleContainer: {
-        marginTop: 30,
-        top: -80,
+      marginTop: 30,
+      top: -80,
     },
     nameText: {
-        fontSize: 30,
-        color: '#333333',
+      fontSize: 30,
+      color: '#333333',
     },
     contentTitle: {
       fontSize: 20,
@@ -129,47 +129,47 @@ const WorldDetailScreen = ({ route, navigation }) => {
   });
 
   return (
-      <ScrollView style={styles.container}>
-        <Image source={img} style={styles.coverImg} />
-        <View style={styles.detailContainer}>
-            <View style={styles.titleContainer}>
-              <Text style={styles.nameText}>{eduWorlds.worldName}</Text>
-              <Text style={styles.contentTitle}>[ 설명 ]</Text>
-              <Text style={styles.contentText}>{eduWorlds.worldContent}</Text>
-              <Text style={styles.questTitle}>[ 달성한 퀘스트 ]</Text>
-              {eduWorlds.doneQuest.length > 0 ? (
-                <View style={styles.listContainer}>
-                  <FlatList
-                  data={eduWorlds.doneQuest}
-                  renderItem={({ item }) => (
+    <ScrollView style={styles.container}>
+      <Image source={img} style={styles.coverImg} />
+      <View style={styles.detailContainer}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.nameText}>{eduWorlds.worldName}</Text>
+          <Text style={styles.contentTitle}>[ 설명 ]</Text>
+          <Text style={styles.contentText}>{eduWorlds.worldContent}</Text>
+          <Text style={styles.questTitle}>[ 달성한 퀘스트 ]</Text>
+          {eduWorlds.doneQuest.length > 0 ? (
+            <View style={styles.listContainer}>
+              <FlatList
+                data={eduWorlds.doneQuest}
+                renderItem={({ item }) => (
                   <AchievementList
                     {...item}
                   />
-                  )}
-                  // numColumns={2}
-                  nestedScrollEnabled
-                />
-              </View>
-              ) : (
-                <View style={styles.noneContainer}>
-                  <Image source={require('../../assets/images/rank/sad.png')} style={styles.noneImg}/>
-                  <Text style={styles.noneText}>달성한 퀘스트가 없습니다!</Text>
-                </View>
-              )}
-              <View style={styles.playButton}>
-                <View style={{width: 200, height: 50}}>
-                  <Button
-                    title={'플레이'}
-                    // onPress={() => {
-                    //   this.setState({isVisible: true});
-                      // }}
-                    color={'#4641D9'}
-                  />
-                </View>
-              </View>
+                )}
+                // numColumns={2}
+                nestedScrollEnabled
+              />
             </View>
+          ) : (
+            <View style={styles.noneContainer}>
+              <Image source={require('../../assets/images/rank/sad.png')} style={styles.noneImg} />
+              <Text style={styles.noneText}>달성한 퀘스트가 없습니다!</Text>
+            </View>
+          )}
+          <View style={styles.playButton}>
+            <View style={{ width: 200, height: 50 }}>
+              <Button
+                title={'플레이'}
+                onPress={() => {
+                  navigation.navigate('Empty')
+                }}
+                color={'#4641D9'}
+              />
+            </View>
+          </View>
         </View>
-      </ScrollView>
+      </View>
+    </ScrollView>
   );
 };
 

@@ -6,6 +6,7 @@ import RegisterScreen from './RegisterScreen';
 import LoginScreen from './LoginScreen';
 import EduWorldDetailScreen from './EduWorldDetailScreen';
 import GameWorldDetailScreen from './GameWorldDetailScreen';
+import EmptyScreen from './EmptyScreen';
 
 export {
     HomeScreen,
@@ -15,5 +16,6 @@ export {
     RegisterScreen,
     LoginScreen,
     EduWorldDetailScreen,
-    GameWorldDetailScreen
+    GameWorldDetailScreen,
+    EmptyScreen
 };

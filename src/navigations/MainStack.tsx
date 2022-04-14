@@ -4,7 +4,7 @@ import { Header } from '../components';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomTab from './BottomTab';
-import { FirstScreen, LoginScreen, RegisterScreen } from '../screens';
+import { FirstScreen, LoginScreen, RegisterScreen, EmptyScreen } from '../screens';
 
 const Stack = createStackNavigator();
 
@@ -40,6 +40,10 @@ const MainStack = () => {
         />
         <Stack.Screen name="Register"
           component={RegisterScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Empty"
+          component={EmptyScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

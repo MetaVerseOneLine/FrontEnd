@@ -52,12 +52,12 @@ const HomeScreen = ({ navigation, Login }) => {
     getWorlds();
   }, []);
 
-  if(worlds.length > 0) {
-    for(var i = 0; i < worlds.length; i++){
-      if(worlds[i].worldCategory === 'edu'){
+  if (worlds.length > 0) {
+    for (var i = 0; i < worlds.length; i++) {
+      if (worlds[i].worldCategory === 'edu') {
         edu.push(worlds[i]);
       }
-      else if(worlds[i].worldCategory === 'game'){
+      else if (worlds[i].worldCategory === 'game') {
         game.push(worlds[i]);
       }
     }
@@ -96,7 +96,7 @@ const HomeScreen = ({ navigation, Login }) => {
         data={edu}
         keyExtractor={(item) => item.worldIdx.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate('EduWorldDetailScreen', {world : item.worldIdx})}>
+          <TouchableOpacity onPress={() => navigation.navigate('EduWorldDetailScreen', { world: item.worldIdx })}>
             <WorldList
               {...item}
             />
@@ -111,7 +111,7 @@ const HomeScreen = ({ navigation, Login }) => {
         data={game}
         keyExtractor={(item) => item.worldIdx.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate('GameWorldDetailScreen', {world : item.worldIdx})}>
+          <TouchableOpacity onPress={() => navigation.navigate('GameWorldDetailScreen', { world: item.worldIdx })}>
             <WorldList
               {...item}
             />
