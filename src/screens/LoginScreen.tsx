@@ -4,6 +4,7 @@ import { TextInput, StyleSheet, View, Text, Image, Alert, BackHandler } from 're
 import { Button } from "@react-native-material/core";
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { widthPercentage, heightPercentage, fontPercentage } from '../common/responsiveSize';
 
 const LoginScreen = ({ navigation }) => {
     const [id, setId] = useState('');
@@ -55,7 +56,7 @@ const LoginScreen = ({ navigation }) => {
         button: {
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 100,
+            marginTop: heightPercentage(100),
         },
 
         row: {
@@ -65,36 +66,37 @@ const LoginScreen = ({ navigation }) => {
             justifyContent: 'space-between',
         },
         touchArea: {
-            marginTop: 10,
+            marginTop: heightPercentage(10),
         },
         img: {
             justifyContent: "center",
             alignItems: "center",
-            width: 180,
-            height: 100,
+            width: widthPercentage(180),
+            height: heightPercentage(100),
         },
         logo: {
-            marginTop: 7,
+            marginTop: heightPercentage(7),
         },
         Textinput: {
-            marginTop: 10,
-            marginBottom: 5,
-            paddingHorizontal: 10,
-            height: 40,
-            width: 210,
+            marginTop: heightPercentage(10),
+            marginBottom: heightPercentage(5),
+            paddingHorizontal: widthPercentage(10),
+            height: heightPercentage(42),
+            width: widthPercentage(210),
             borderRadius: 5,
             borderColor: 'gray',
             borderWidth: 1
         },
         TextInputMargin: {
-            marginTop: 80,
+            marginTop: heightPercentage(80),
         },
         LoginButtin: {
-            margin: 10,
+            marginHorizontal: widthPercentage(10),
+            marginVertical: heightPercentage(10),
             borderRadius: 5,
             borderColor: 'black',
             borderWidth: 1,
-            width: 210,
+            width: widthPercentage(210),
         }
     });
     return (

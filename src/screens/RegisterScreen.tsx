@@ -9,6 +9,8 @@ import { images } from '../common/images';
 import { theme } from '../common/theme';
 import { IconButton, Colors } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { widthPercentage, heightPercentage, fontPercentage } from '../common/responsiveSize';
+
 const UselessTextInput = (props) => {
     return (
         <TextInput
@@ -145,38 +147,38 @@ const RegisterScreen = ({ navigation }) => {
             },
             modal: {
                 width: '80%',
-                height: 250,
+                height: heightPercentage(250),
                 borderRadius: 20,
                 alignItems: 'center',
                 justifyContent: 'center',
                 backgroundColor: theme.background,
             },
             title: {
-                marginBottom: 10,
+                marginBottom: heightPercentage(10),
             },
             imgContainer: {
                 flexDirection: 'row',
-                marginVertical: 5,
+                marginVertical: heightPercentage(5),
             },
             profileImg: {
-                width: 63,
-                height: 63,
-                marginLeft: 3,
+                width: widthPercentage(63),
+                height: heightPercentage(63),
+                marginLeft: widthPercentage(3),
             },
             profileImgSelect: {
-                width: 63,
-                height: 63,
-                marginLeft: 3,
+                width: widthPercentage(63),
+                height: heightPercentage(63),
+                marginLeft: widthPercentage(3),
                 borderColor: '#FF4C4C',
                 borderWidth: 3,
                 borderRadius: 50,
             },
             btnContainer: {
                 flexDirection: 'row',
-                marginTop: 15,
+                marginTop: heightPercentage(15),
             },
             btn: {
-                marginHorizontal: 3,
+                marginHorizontal: widthPercentage(3),
                 width: '20%',
                 height: '100%',
             },
@@ -394,16 +396,17 @@ const RegisterScreen = ({ navigation }) => {
         button: {
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 100,
+            marginTop: heightPercentage(100),
         },
         confirmButton: {
-            margin: 10,
-            marginBottom: 5,
+            marginHorizontal: widthPercentage(10),
+            marginVertical: heightPercentage(10),
+            marginBottom: heightPercentage(5),
             justifyContent: "center",
             alignItems: "center",
             borderColor: 'black',
             borderWidth: 1,
-            height: 30,
+            height: heightPercentage(32),
         },
         row: {
             width: '100%',
@@ -412,60 +415,62 @@ const RegisterScreen = ({ navigation }) => {
             justifyContent: 'center',
         },
         touchArea: {
-            marginTop: 10,
+            marginTop: heightPercentage(10),
         },
         img: {
             justifyContent: "center",
             alignItems: "center",
-            width: 45,
-            height: 25,
-            margin: 10,
+            width: widthPercentage(45),
+            height: heightPercentage(25),
+            marginHorizontal: widthPercentage(10),
+            marginVertical: heightPercentage(10),
         },
         TextinputId: {
-            margin: 10,
-            marginBottom: 5,
-            height: 30,
-            width: 113,
-            paddingBottom: 4,
-            paddingHorizontal: 10,
+            marginHorizontal: widthPercentage(10),
+            marginVertical: heightPercentage(10),
+            marginBottom: heightPercentage(5),
+            height: heightPercentage(32),
+            width: widthPercentage(113),
+            paddingBottom: heightPercentage(4),
+            paddingHorizontal: heightPercentage(10),
             borderRadius: 5,
             borderColor: 'gray',
             borderWidth: 1,
         },
         TextinputPassword: {
-            marginTop: 5,
-            marginBottom: 5,
-            paddingHorizontal: 10,
-            height: 30,
-            paddingBottom: 4,
+            marginVertical: heightPercentage(5),
+            paddingHorizontal: widthPercentage(10),
+            height: heightPercentage(32),
+            paddingBottom: heightPercentage(4),
             borderRadius: 5,
             borderColor: 'gray',
             borderWidth: 1,
-            width: 225,
+            width: widthPercentage(225),
         },
         TextInputMargin: {
-            marginTop: 40,
+            marginTop: heightPercentage(40),
         },
         RegisterButton: {
-            margin: 10,
+            marginHorizontal: widthPercentage(10),
+            marginVertical: heightPercentage(10),
             borderRadius: 5,
             borderColor: 'black',
             borderWidth: 1,
-            paddingBottom: 10,
-            height: 40,
-            width: 225,
+            paddingBottom: heightPercentage(10),
+            height: heightPercentage(40),
+            width: widthPercentage(225),
         },
         header: {
             flexDirection: 'row',
         },
         registerFont: {
-            fontSize: 26,
+            fontSize: fontPercentage(26),
             fontWeight: "bold",
             fontStyle: "normal",
             color: "#000000",
         },
         profileImage: {
-            paddingVertical: 10,
+            paddingVertical: heightPercentage(10),
         }
     });
     return (
@@ -513,15 +518,16 @@ const RegisterScreen = ({ navigation }) => {
                     borderWidth: 1,
                     borderColor: "gray",
                     borderRadius: 5,
-                    width: 225,
-                    margin: 5,
+                    width: widthPercentage(225),
+                    marginHorizontal: widthPercentage(5),
+                    marginVertical: heightPercentage(5),
                 }}>
                 <UselessTextInput
                     multiline
                     numberOfLines={3}
                     onChangeText={text => setProfile(text)}
                     value={profile}
-                    style={{ padding: 10 }}
+                    style={{ paddingVertical: heightPercentage(10), paddingHorizontal: widthPercentage(10) }}
                     placeholder="자기소개 한 마디"
                 />
             </View>

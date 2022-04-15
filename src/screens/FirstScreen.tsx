@@ -2,6 +2,7 @@ import { AutoStoriesTwoTone } from '@mui/icons-material';
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import { Button } from "@react-native-material/core";
+import { widthPercentage, heightPercentage, fontPercentage } from '../common/responsiveSize';
 
 const FirstScreen = ({ navigation }) => {
     // style
@@ -16,7 +17,7 @@ const FirstScreen = ({ navigation }) => {
         button: {
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 100,
+            marginTop: heightPercentage(100),
         },
 
         row: {
@@ -26,23 +27,23 @@ const FirstScreen = ({ navigation }) => {
             justifyContent: 'space-between',
         },
         touchArea: {
-            marginTop: 10,
+            marginTop: heightPercentage(10),
         },
         img: {
             justifyContent: "center",
             alignItems: "center",
-            width: 220,
-            height: 140,
+            width: widthPercentage(220),
+            height: heightPercentage(140),
         },
         logo: {
-            marginTop: 7,
+            marginTop: heightPercentage(7),
         },
     });
     return (
         <View style={styles.background}>
             <Image source={require('../../assets/images/logo.png')} style={styles.img} />
             <View style={styles.button}>
-                <Button title="           로그인           " color='#242424' onPress={() => navigation.navigate('Login')} />
+                <Button style={{width: widthPercentage(200)}} title="로그인" color='#242424' onPress={() => navigation.navigate('Login')} />
             </View>
         </View>
     );

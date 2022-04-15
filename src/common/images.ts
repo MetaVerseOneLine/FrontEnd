@@ -14,8 +14,10 @@ import Profile04 from '../../assets/images/profile/img4.png';
 import Profile05 from '../../assets/images/profile/img5.png';
 import Profile06 from '../../assets/images/profile/img6.png';
 import DefaultImage from '../../assets/images/profile/defaultImage.png';
-import Medal from '../../assets/images/achievement/medal.png';
 import Sad from '../../assets/images/rank/sad.png'
+import GoldMedal from '../../assets/images/achievement/gold-medal.png';
+import SilverMedal from '../../assets/images/achievement/silver-medal.png';
+import BronzeMedal from '../../assets/images/achievement/bronze-medal.png';
 
 export const images = {
     logoImg: Logo,
@@ -34,6 +36,8 @@ export const images = {
     pro05: Profile05,
     pro06: Profile06,
     defaultImage: DefaultImage,
-    medal: Medal,
     sad: Sad,
+    goldImg: GoldMedal,
+    silverImg: SilverMedal,
+    bronzeImg: BronzeMedal,
 };

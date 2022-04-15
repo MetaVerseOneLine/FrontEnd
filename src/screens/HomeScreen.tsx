@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image, FlatList, ScrollView, BackHandler, Alert
 import { images } from '../common/images';
 import axios from 'axios';
 import WorldList from '../components/World/WorldList';
+import { widthPercentage, heightPercentage, fontPercentage } from '../common/responsiveSize';
 
 const HomeScreen = ({ navigation, Login }) => {
   useEffect(() => {
@@ -69,22 +70,22 @@ const HomeScreen = ({ navigation, Login }) => {
       backgroundColor: '#FFFFFF',
       margin: 0,
       padding: 0,
-      width: '100%',
     },
     img: {
       width: '100%',
-      height: 250,
+      height: heightPercentage(250),
       resizeMode: 'contain',
       margin: 0,
       padding: 0,
     },
     text: {
-      fontSize: 20,
+      fontSize: fontPercentage(20),
       alignItems: 'flex-start',
-      marginLeft: 40,
+      marginLeft: widthPercentage(40),
     },
     list: {
-      margin: 20,
+      marginHorizontal: widthPercentage(20),
+      marginVertical: heightPercentage(20),
       flex: 1,
     },
   });

@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { StyleSheet, View, Text, Image, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, View, Text, Image, ScrollView, FlatList, ImageBackground } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Progress from 'react-native-progress';
 import { images } from '../common/images';
 import AchievementList from '../components/Achivement/AchievementList';
+import { widthPercentage, heightPercentage, fontPercentage } from '../common/responsiveSize';
 
 const MyPageScreen = ({ navigation }) => {
   type user = {
@@ -72,7 +73,7 @@ const MyPageScreen = ({ navigation }) => {
 
   useEffect(() => {
     if (asyncUserId.length != 0) getAchivement();
-  }, [asyncUserId]);
+  });
 
   var percent;
   if (achInfo.total == 0) {
@@ -107,6 +108,18 @@ const MyPageScreen = ({ navigation }) => {
           break;
   }
 
+  var medal;
+  var medalColor;
+  if(achInfo.total <= 30) {
+    medal = images.bronzeImg;
+  }
+  else if(achInfo.total <= 70){
+    medal = images.silverImg;
+  }
+  else {
+    medal = images.goldImg;
+  }
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -116,23 +129,23 @@ const MyPageScreen = ({ navigation }) => {
     },
     img: {
       width: '100%',
-      height: 250,
+      height: heightPercentage(250),
       resizeMode: 'contain',
       margin: 0,
       padding: 0,
     },
     myPageContent: {
-      top: -70,
+      top: -heightPercentage(70),
     },
     profileContent: {
       alignItems: 'center',
-      paddingBottom: 15,
+      paddingBottom: heightPercentage(15),
       borderBottomWidth: 1,
       borderBottomColor: '#C2C2C2',
     },
     iconImg: {
-      width: 120,
-      height: 120,
+      width: widthPercentage(130),
+      height: heightPercentage(130),
       borderRadius: 60,
       alignItems: 'center',
       justifyContent: 'center',
@@ -140,37 +153,38 @@ const MyPageScreen = ({ navigation }) => {
     },
     profileImg: {
       width: '100%',
-      height: 110,
+      height: heightPercentage(90),
       resizeMode: 'contain',
+      // marginTop: 10,
     },
     name: {
-      fontSize: 22,
+      fontSize: fontPercentage(22),
     },
     content: {
-      fontSize: 15,
-      marginTop: 5,
+      fontSize: fontPercentage(15),
+      marginTop: heightPercentage(5),
     },
     achTitle: {
-      marginLeft: 15,
-      marginVertical: 10,
-      fontSize: 20,
+      marginLeft: widthPercentage(15),
+      marginVertical: heightPercentage(10),
+      fontSize: fontPercentage(20),
     },
     progressSection: {
       alignContent: 'center',
-      marginHorizontal: 20,
+      marginHorizontal: widthPercentage(20),
       flexDirection: 'row',
     },
     progressText: {
-      fontSize: 17,
+      fontSize: fontPercentage(17),
     },
     progress: {
       width: '90%',
       justifyContent: 'center',
-      marginHorizontal: 10,
+      marginHorizontal: widthPercentage(10),
     },
     questContent: {
       alignItems: 'center',
-    }
+    },
   });
   return (
     <ScrollView style={styles.container}>
@@ -178,7 +192,9 @@ const MyPageScreen = ({ navigation }) => {
       <View style={styles.myPageContent}>
         <View style={styles.profileContent}>
           <View style={styles.iconImg}>
-            <Image source={img} style={styles.profileImg} />
+            <ImageBackground source={medal} style={{ width: "100%", height: "100%", justifyContent: 'center' }}>
+              <Image source={img} style={styles.profileImg} />
+            </ImageBackground>
           </View>
           <Text style={styles.name}>{userInfo.userName}</Text>
           <Text style={styles.content}>{userInfo.userContent}</Text>

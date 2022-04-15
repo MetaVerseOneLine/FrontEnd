@@ -147,58 +147,60 @@ const WorldDetailScreen = ({ route, navigation }) => {
     },
     playButton: {
       alignItems: 'center',
-      marginTop: 20,
+      marginTop: 25,
     }
   });
 
   return (
-    <ScrollView style={styles.container}>
-      <Image source={img} style={styles.coverImg} />
-      <View style={styles.detailContainer}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.nameText}>{gameWorlds.worldName}</Text>
-          <Text style={styles.contentTitle}>[ 설명 ]</Text>
-          <Text style={styles.contentText}>{gameWorlds.worldContent}</Text>
-          <Text style={styles.questTitle}>[ Top 5 ]</Text>
-          <View style={styles.rankBox}>
-            <Text style={styles.rankText}>순위</Text>
-            <Text style={styles.rankText}>이름</Text>
-            <Text style={styles.rankText}>점수</Text>
-          </View>
-          <View style={styles.rankBox}>
-            <Text style={styles.rankText}>1</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.firstUserName}</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.firstScore}</Text>
-          </View>
-          <View style={styles.rankBox}>
-            <Text style={styles.rankText}>2</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.secondUserName}</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.secondScore}</Text>
-          </View>
-          <View style={styles.rankBox}>
-            <Text style={styles.rankText}>3</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.thirdUserName}</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.thirdScore}</Text>
-          </View>
-          <View style={styles.rankBox}>
-            <Text style={styles.rankText}>4</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.forthUserName}</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.forthScore}</Text>
-          </View>
-          <View style={styles.rankBox}>
-            <Text style={styles.rankText}>5</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthUserName}</Text>
-            <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthScore}</Text>
-          </View>
-          <View style={styles.playButton}>
-            <View style={{ width: 200, height: 50 }}>
-              <Button
-                title={'플레이'}
-                onPress={() => {
-                  navigation.navigate('Empty')
-                }}
-                color={'#4641D9'}
-              />
+      <ScrollView style={styles.container}>
+        <Image source={img} style={styles.coverImg} />
+        <View style={styles.detailContainer}>
+            <View style={styles.titleContainer}>
+              <Text style={styles.nameText}>{gameWorlds.worldName}</Text>
+              <Text style={styles.contentTitle}>[ 설명 ]</Text>
+              <Text style={styles.contentText}>{gameWorlds.worldContent}</Text>
+              <View style={styles.playButton}>
+                <View style={{width: 200, height: 50}}>
+                  <Button
+                    title={'플레이'}
+                    // onPress={() => {
+                    //   this.setState({isVisible: true});
+                      // }}
+                    color={'#4641D9'}
+                  />
+                </View>
+              </View>
+              <Text style={styles.questTitle}>[ Top 5 ]</Text>
+              <View style={styles.rankBox}>
+                <Text style={styles.rankText}>순위</Text>
+                <Text style={styles.rankText}>이름</Text>
+                <Text style={styles.rankText}>점수</Text>
+              </View>
+              <View style={styles.rankBox}>
+                <Text style={styles.rankText}>1</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.firstUserName}</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.firstScore}</Text>
+              </View>
+              <View style={styles.rankBox}>
+                <Text style={styles.rankText}>2</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.secondUserName}</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.secondScore}</Text>
+              </View>
+              <View style={styles.rankBox}>
+                <Text style={styles.rankText}>3</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.thirdUserName}</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.thirdScore}</Text>
+              </View>
+              <View style={styles.rankBox}>
+                <Text style={styles.rankText}>4</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.forthUserName}</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.forthScore}</Text>
+              </View>
+              <View style={styles.rankBox}>
+                <Text style={styles.rankText}>5</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthUserName}</Text>
+                <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthScore}</Text>
+              </View>
             </View>
           </View>
         </View>

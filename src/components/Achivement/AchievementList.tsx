@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { images } from '../../common/images';
+import { widthPercentage, heightPercentage, fontPercentage } from '../../common/responsiveSize';
 
 const AchievementList = ({ questContent }) => {
     const styles = StyleSheet.create({
@@ -9,12 +9,12 @@ const AchievementList = ({ questContent }) => {
           borderBottomColor: '#CCCCCC',
           borderTopColor: '#CCCCCC',
           borderTopWidth: 1,
-          // paddingVertical: 12,
-          marginRight: 10,
+          marginRight: widthPercentage(10),
         },
         questText : {
-          fontSize: 17,
-          padding: 20,
+          fontSize: fontPercentage(17),
+          paddingHorizontal: widthPercentage(20),
+          paddingVertical: heightPercentage(20),
         },
       });
 

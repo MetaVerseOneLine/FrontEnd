@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import IIcon from 'react-native-vector-icons/Ionicons';
 import SIcon from 'react-native-vector-icons/SimpleLineIcons';
 import FIcon from 'react-native-vector-icons/FontAwesome';
-
+import { widthPercentage, heightPercentage, fontPercentage } from '../../common/responsiveSize';
 // Footer Component
 const Footer = ({ navigation }) => {
   const [isRank, setRank] = useState<boolean>(false);
@@ -28,9 +28,10 @@ const Footer = ({ navigation }) => {
     setMy(true);
     navigation.navigate('MyPage');
   }
+
   const styles = StyleSheet.create({
     container: {
-      height: 90,
+      height: heightPercentage(90),
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#FFFFFF',
@@ -40,9 +41,9 @@ const Footer = ({ navigation }) => {
     },
     bar: {
       position: 'absolute',
-      top: 30,
+      top: heightPercentage(30),
       backgroundColor: '#FFFFFF',
-      height: 90,
+      height: heightPercentage(90),
       width: '100%',
       alignItems: 'center',
       justifyContent: 'center',
@@ -54,34 +55,34 @@ const Footer = ({ navigation }) => {
     },
     sideBtn: {
       alignItems: 'center',
-      top: 15,
-      width: 50,
-      height: 50,
+      top: heightPercentage(15),
+      width: widthPercentage(50),
+      height: heightPercentage(50),
     },
     rightBtn:{
       alignItems: 'center',
-      top: 15,
-      width: 50,
-      height: 50,
-      marginRight: 35,
+      top: heightPercentage(15),
+      width: widthPercentage(50),
+      height: heightPercentage(50),
+      marginRight: widthPercentage(35),
     },
     leftBtn:{
       alignItems: 'center',
-      top: 15,
-      width: 50,
-      height: 50,
-      marginLeft: 35,
+      top: heightPercentage(15),
+      width: widthPercentage(50),
+      height: heightPercentage(50),
+      marginLeft: widthPercentage(35),
     },
     centerBtn:{
       alignItems: 'center',
-      top: 15,
-      width: 50,
-      height: 50,
-      marginHorizontal: 35,
+      top: heightPercentage(15),
+      width: widthPercentage(50),
+      height: heightPercentage(50),
+      marginHorizontal: widthPercentage(35),
     },
     icon: {
       alignItems: 'center',
-      marginTop: 10,
+      marginTop: heightPercentage(10),
     },
   });
 

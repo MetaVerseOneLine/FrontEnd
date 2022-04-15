@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { widthPercentage, heightPercentage, fontPercentage } from '../../common/responsiveSize';
 
 const RankList = ({ userId, userName, worldName, score, rank, firstUserId, firstUserName, firstScore, secondUserId, secondUserName, secondScore, thirdUserId, thirdUserName, thirdScore }) => {
     const styles = StyleSheet.create({
         container: {
           backgroundColor: '#FFFFFF',
-          marginHorizontal: 10,
-          marginTop: 10,
-          padding: 4,
+          marginHorizontal: widthPercentage(10),
+          marginTop: heightPercentage(10),
+          paddingHorizontal: widthPercentage(4),
+          paddingVertical: heightPercentage(4),
         },
         rankBox: {
             justifyContent: 'space-between',
@@ -16,7 +18,8 @@ const RankList = ({ userId, userName, worldName, score, rank, firstUserId, first
             borderBottomWidth: 1,
             borderTopColor: '#CCCCCC',
             borderTopWidth: 1,
-            padding: 10,
+            paddingHorizontal: widthPercentage(10),
+            paddingVertical: heightPercentage(10),
         },
         myRankBox: {
             justifyContent: 'space-between',
@@ -25,15 +28,16 @@ const RankList = ({ userId, userName, worldName, score, rank, firstUserId, first
             borderBottomWidth: 1,
             borderTopColor: '#CCCCCC',
             borderTopWidth: 1,
-            padding: 10,
+            paddingHorizontal: widthPercentage(10),
+            paddingVertical: heightPercentage(10),
             backgroundColor: 'rgba(181, 178, 255, 0.5)',
         },
         rankTitle: {
-            fontSize: 20,
-            marginVertical: 12,
+            fontSize: fontPercentage(20),
+            marginVertical: heightPercentage(12),
         },
         rankText: {
-            fontSize: 17,
+            fontSize: fontPercentage(17),
         }
       });
 
