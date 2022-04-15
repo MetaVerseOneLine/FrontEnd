@@ -28,13 +28,13 @@ const WorldDetailScreen = ({ route, navigation }) => {
   };
 
   type gameWorld = {
-    worldIdx : number,
-    worldName : string,
-    worldContent : string,
-    worldSceneId : number,
-    worldCategory : string,
-    worldImg : number,
-    worldRank5 : rank,
+    worldIdx: number,
+    worldName: string,
+    worldContent: string,
+    worldSceneId: number,
+    worldCategory: string,
+    worldImg: number,
+    worldRank5: rank,
   };
 
   const [gameWorlds, setResult] = useState<gameWorld>({
@@ -71,13 +71,13 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   const getWorlds = async () => {
     axios.post('http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/World/Detail', {
-            worldIdx: worldId,
-            userId: asyncUserId,
-        }).then(
-            res => {
-              setResult(res.data);
-            }
-        ).catch(err => console.log(err))
+      worldIdx: worldId,
+      userId: asyncUserId,
+    }).then(
+      res => {
+        setResult(res.data);
+      }
+    ).catch(err => console.log(err))
   };
 
   useEffect(() => {
@@ -86,10 +86,10 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   var img;
   switch (gameWorlds.worldImg) {
-  case 2:
+    case 2:
       img = images.kartImg;
       break;
-  case 6:
+    case 6:
       img = images.gameImg;
       break;
   }
@@ -102,20 +102,20 @@ const WorldDetailScreen = ({ route, navigation }) => {
       height: '100%',
     },
     coverImg: {
-        width: '100%',
-        height: 200,
-        opacity: 0.6,
+      width: '100%',
+      height: 200,
+      opacity: 0.6,
     },
     detailContainer: {
-        marginLeft: 10,
+      marginLeft: 10,
     },
     titleContainer: {
-        marginTop: 30,
-        top: -80,
+      marginTop: 30,
+      top: -80,
     },
     nameText: {
-        fontSize: 30,
-        color: '#333333',
+      fontSize: 30,
+      color: '#333333',
     },
     contentTitle: {
       fontSize: 20,
@@ -139,11 +139,11 @@ const WorldDetailScreen = ({ route, navigation }) => {
       padding: 10,
     },
     rankTitle: {
-        fontSize: 20,
-        marginVertical: 12,
+      fontSize: 20,
+      marginVertical: 12,
     },
     rankText: {
-        fontSize: 17,
+      fontSize: 17,
     },
     playButton: {
       alignItems: 'center',
@@ -202,8 +202,10 @@ const WorldDetailScreen = ({ route, navigation }) => {
                 <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthScore}</Text>
               </View>
             </View>
+          </View>
         </View>
-      </ScrollView>
+      </View>
+    </ScrollView>
   );
 };
 

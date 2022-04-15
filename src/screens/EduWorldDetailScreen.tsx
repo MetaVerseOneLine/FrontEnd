@@ -11,27 +11,27 @@ const WorldDetailScreen = ({ route, navigation }) => {
   var worldId = JSON.stringify(world);
 
   type quest = {
-    questContent : string,
+    questContent: string,
   };
 
   type eduWorld = {
-    worldIdx : number,
-    worldName : string,
-    worldContent : string,
-    worldSceneId : number,
-    worldCategory : string,
-    worldImg : number,
-    doneQuest : Array<quest>,
+    worldIdx: number,
+    worldName: string,
+    worldContent: string,
+    worldSceneId: number,
+    worldCategory: string,
+    worldImg: number,
+    doneQuest: Array<quest>,
   };
 
   const [eduWorlds, setResult] = useState<eduWorld>({
-    worldIdx : 0,
-    worldName : '',
-    worldContent : '',
-    worldSceneId : 0,
-    worldCategory : '',
-    worldImg : 0,
-    doneQuest : [],
+    worldIdx: 0,
+    worldName: '',
+    worldContent: '',
+    worldSceneId: 0,
+    worldCategory: '',
+    worldImg: 0,
+    doneQuest: [],
   });
 
   const [asyncUserId, setId] = useState<String>('');
@@ -41,13 +41,13 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   const getWorlds = async () => {
     axios.post('http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/World/Detail', {
-            worldIdx: worldId,
-            userId: asyncUserId,
-        })
-        .then(({ data }) => {
-          setResult(data);
-        })
-        .catch(err => console.log(err))
+      worldIdx: worldId,
+      userId: asyncUserId,
+    })
+      .then(({ data }) => {
+        setResult(data);
+      })
+      .catch(err => console.log(err))
   };
 
   useEffect(() => {
@@ -56,16 +56,16 @@ const WorldDetailScreen = ({ route, navigation }) => {
 
   var img;
   switch (eduWorlds.worldImg) {
-  case 1:
+    case 1:
       img = images.scienceImg;
       break;
-  case 3:
+    case 3:
       img = images.koreanImg;
       break;
-  case 4:
+    case 4:
       img = images.mathImg;
       break;
-  case 5:
+    case 5:
       img = images.socialImg;
       break;
   }
@@ -168,8 +168,10 @@ const WorldDetailScreen = ({ route, navigation }) => {
                 </View>
               )}
             </View>
+          </View>
         </View>
-      </ScrollView>
+      </View>
+    </ScrollView>
   );
 };
 

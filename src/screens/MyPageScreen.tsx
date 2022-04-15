@@ -9,19 +9,19 @@ import { widthPercentage, heightPercentage, fontPercentage } from '../common/res
 
 const MyPageScreen = ({ navigation }) => {
   type user = {
-    userId : string,
-    userName : string,
-    userContent : string,
-    userImg : string,
+    userId: string,
+    userName: string,
+    userContent: string,
+    userImg: string,
   };
 
   type achievement = {
-    doneQuest : Array<quest>,
-    total : number,
+    doneQuest: Array<quest>,
+    total: number,
   };
 
   type quest = {
-    questContent : string,
+    questContent: string,
   };
 
   const [asyncUserId, setId] = useState<String>('');
@@ -32,17 +32,17 @@ const MyPageScreen = ({ navigation }) => {
   // const asyncUserId = 'test';
 
   const [userInfo, setUserInfo] = useState<user>({
-    userId : '',
-    userName : '',
-    userContent : '',
-    userImg : '',
+    userId: '',
+    userName: '',
+    userContent: '',
+    userImg: '',
   });
 
   const [achInfo, setAchInfo] = useState<achievement>({
-    doneQuest : [],
-    total : 0,
+    doneQuest: [],
+    total: 0,
   });
-  
+
   const getUser = async () => {
     axios
       .get(`http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/User/${asyncUserId}`)
@@ -54,7 +54,7 @@ const MyPageScreen = ({ navigation }) => {
         console.error(e); // 에러표시
       });
   };
-  
+
   const getAchivement = async () => {
     axios
       .get(`http://oneline1-dev.eba-njfq6hmd.us-east-1.elasticbeanstalk.com/api/Achievement/${asyncUserId}`)
@@ -76,7 +76,7 @@ const MyPageScreen = ({ navigation }) => {
   });
 
   var percent;
-  if(achInfo.total == 0) {
+  if (achInfo.total == 0) {
     percent = 0;
   }
   else {
