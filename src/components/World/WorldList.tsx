@@ -2,17 +2,19 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Button, Card, Title } from 'react-native-paper';
 import { images } from '../../common/images';
+import { widthPercentage, heightPercentage, fontPercentage } from '../../common/responsiveSize';
 
 const styles = StyleSheet.create({
     container: {
       backgroundColor: '#FFFFFF',
-      marginLeft: 17,
-      marginTop: 10,
+      marginLeft: widthPercentage(17),
+      marginTop: heightPercentage(10),
       borderWidth: 1,
       borderColor: '#C2C2C2',
       borderRadius: 10,
       borderStyle: 'solid',
-      padding: 4,
+      paddingHorizontal: widthPercentage(4),
+      paddingVertical: heightPercentage(4),
     },
   });
 
@@ -42,8 +44,8 @@ const WorldList = ({worldIdx, worldName, worldImg, worldCategory}) => {
     return(
         <View style={styles.container}>
             <Card>
-                <Card.Cover source={img} style={{ width: 150, height: 130, resizeMode: 'contain' }}/>
-                <Title style={{marginTop: 10, marginLeft: 3, fontSize: 17}}>{worldName}</Title>
+                <Card.Cover source={img} style={{ width: widthPercentage(150), height: heightPercentage(130), resizeMode: 'contain' }}/>
+                <Title style={{marginTop: heightPercentage(10), marginLeft: widthPercentage(3), fontSize: fontPercentage(16)}}>{worldName}</Title>
             </Card>
         </View>
     );

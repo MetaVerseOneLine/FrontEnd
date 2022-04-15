@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StyleSheet, Text, View, Image, FlatList, ScrollView, Button } from 'react-native';
 import { images } from '../common/images';
 import AchievementList from '../components/Achivement/AchievementList';
-
+import { widthPercentage, heightPercentage, fontPercentage } from '../common/responsiveSize';
 
 const WorldDetailScreen = ({ route, navigation }) => {
   var { world } = route.params;
@@ -79,52 +79,52 @@ const WorldDetailScreen = ({ route, navigation }) => {
     },
     coverImg: {
         width: '100%',
-        height: 200,
+        height: heightPercentage(200),
         opacity: 0.6,
     },
     detailContainer: {
-        marginLeft: 10,
+        marginLeft: widthPercentage(10),
     },
     titleContainer: {
-        marginTop: 30,
-        top: -80,
+        marginTop: heightPercentage(30),
+        top: -heightPercentage(80),
     },
     nameText: {
-        fontSize: 30,
+        fontSize: fontPercentage(30),
         color: '#333333',
     },
     contentTitle: {
-      fontSize: 20,
-      marginTop: 25,
+      fontSize: fontPercentage(20),
+      marginTop: heightPercentage(25),
     },
     contentText: {
-      fontSize: 18,
-      marginTop: 10,
+      fontSize: fontPercentage(18),
+      marginTop: heightPercentage(10),
     },
     questTitle: {
-      fontSize: 20,
-      marginTop: 15,
+      fontSize: fontPercentage(20),
+      marginTop: heightPercentage(15),
     },
     listContainer: {
-      marginTop: 20,
+      marginTop: heightPercentage(20),
     },
     noneContainer: {
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: 30,
+      marginTop: heightPercentage(30),
     },
     noneImg: {
-      width: 100,
-      height: 100,
+      width: widthPercentage(100),
+      height: heightPercentage(100),
       resizeMode: 'contain',
     },
     noneText: {
-      fontSize: 18,
-      marginTop: 10,
+      fontSize: fontPercentage(18),
+      marginTop: heightPercentage(10),
     },
     playButton: {
       alignItems: 'center',
-      marginTop: 20,
+      marginTop: heightPercentage(25),
     }
   });
 
@@ -136,6 +136,17 @@ const WorldDetailScreen = ({ route, navigation }) => {
               <Text style={styles.nameText}>{eduWorlds.worldName}</Text>
               <Text style={styles.contentTitle}>[ 설명 ]</Text>
               <Text style={styles.contentText}>{eduWorlds.worldContent}</Text>
+              <View style={styles.playButton}>
+                <View style={{width: widthPercentage(200), height: heightPercentage(50)}}>
+                  <Button
+                    title={'플레이'}
+                    // onPress={() => {
+                    //   this.setState({isVisible: true});
+                      // }}
+                    color={'#4641D9'}
+                  />
+                </View>
+              </View>
               <Text style={styles.questTitle}>[ 달성한 퀘스트 ]</Text>
               {eduWorlds.doneQuest.length > 0 ? (
                 <View style={styles.listContainer}>
@@ -156,17 +167,6 @@ const WorldDetailScreen = ({ route, navigation }) => {
                   <Text style={styles.noneText}>달성한 퀘스트가 없습니다!</Text>
                 </View>
               )}
-              <View style={styles.playButton}>
-                <View style={{width: 200, height: 50}}>
-                  <Button
-                    title={'플레이'}
-                    // onPress={() => {
-                    //   this.setState({isVisible: true});
-                      // }}
-                    color={'#4641D9'}
-                  />
-                </View>
-              </View>
             </View>
         </View>
       </ScrollView>

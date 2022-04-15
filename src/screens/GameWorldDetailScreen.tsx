@@ -147,7 +147,7 @@ const WorldDetailScreen = ({ route, navigation }) => {
     },
     playButton: {
       alignItems: 'center',
-      marginTop: 20,
+      marginTop: 25,
     }
   });
 
@@ -159,6 +159,17 @@ const WorldDetailScreen = ({ route, navigation }) => {
               <Text style={styles.nameText}>{gameWorlds.worldName}</Text>
               <Text style={styles.contentTitle}>[ 설명 ]</Text>
               <Text style={styles.contentText}>{gameWorlds.worldContent}</Text>
+              <View style={styles.playButton}>
+                <View style={{width: 200, height: 50}}>
+                  <Button
+                    title={'플레이'}
+                    // onPress={() => {
+                    //   this.setState({isVisible: true});
+                      // }}
+                    color={'#4641D9'}
+                  />
+                </View>
+              </View>
               <Text style={styles.questTitle}>[ Top 5 ]</Text>
               <View style={styles.rankBox}>
                 <Text style={styles.rankText}>순위</Text>
@@ -189,17 +200,6 @@ const WorldDetailScreen = ({ route, navigation }) => {
                 <Text style={styles.rankText}>5</Text>
                 <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthUserName}</Text>
                 <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthScore}</Text>
-              </View>
-              <View style={styles.playButton}>
-                <View style={{width: 200, height: 50}}>
-                  <Button
-                    title={'플레이'}
-                    // onPress={() => {
-                    //   this.setState({isVisible: true});
-                      // }}
-                    color={'#4641D9'}
-                  />
-                </View>
               </View>
             </View>
         </View>

@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, ScrollView, FlatList, Image } from 'react-nativ
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import RankList from '../components/Rank/RankList';
+import { widthPercentage, heightPercentage, fontPercentage } from '../common/responsiveSize';
 
 const RankScreen = ({ navigation }) => {
   type rank = {
@@ -53,9 +54,9 @@ const RankScreen = ({ navigation }) => {
       backgroundColor: '#FFFFFF',
     },
     title: {
-      fontSize: 27,
-      marginLeft: 15,
-      marginTop: 10,
+      fontSize: fontPercentage(27),
+      marginLeft: widthPercentage(15),
+      marginTop: heightPercentage(10),
     },
     noneContainer: {
       flex: 1,
@@ -63,13 +64,13 @@ const RankScreen = ({ navigation }) => {
       justifyContent: 'center',
     },
     noneImg: {
-      width: 100,
-      height: 100,
+      width: widthPercentage(100),
+      height: heightPercentage(100),
       resizeMode: 'contain',
     },
     noneText: {
-      fontSize: 18,
-      marginTop: 10,
+      fontSize: fontPercentage(18),
+      marginTop: heightPercentage(10),
     }
   });
   return (

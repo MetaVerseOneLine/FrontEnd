@@ -4,6 +4,7 @@ import { Image, View, StyleSheet, TouchableOpacity, BackHandler, Alert } from 'r
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AuthStack from '../../navigations/AuthStack';
+import { widthPercentage, heightPercentage, fontPercentage } from '../../common/responsiveSize';
 // Header component
 function Header({ navigation }) {
   // style
@@ -18,12 +19,12 @@ function Header({ navigation }) {
       // paddingTop: 15,
     },
     img: {
-      width: 100,
-      height: 50,
+      width: widthPercentage(100),
+      height: heightPercentage(50),
       resizeMode: 'contain',
     },
     logo: {
-      paddingTop: 5,
+      paddingTop: heightPercentage(5),
     },
   });
 
