@@ -169,9 +169,7 @@ const WorldDetailScreen = ({ route, navigation }) => {
               )}
             </View>
           </View>
-        </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
   );
 };
 

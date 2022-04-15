@@ -202,10 +202,8 @@ const WorldDetailScreen = ({ route, navigation }) => {
                 <Text style={styles.rankText}>{gameWorlds.worldRank5.fifthScore}</Text>
               </View>
             </View>
-          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
   );
 };
 
