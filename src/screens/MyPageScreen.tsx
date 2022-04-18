@@ -144,30 +144,39 @@ const MyPageScreen = ({ navigation }) => {
       borderBottomColor: '#C2C2C2',
     },
     iconImg: {
-      width: widthPercentage(130),
-      height: heightPercentage(130),
-      borderRadius: 60,
+      width: widthPercentage(135),
+      height: heightPercentage(135),
       alignItems: 'center',
       justifyContent: 'center',
       marginBottom: 0,
     },
+    medalImg: {
+      position: 'absolute',
+      width: '100%',
+      height: heightPercentage(130),
+      resizeMode: 'contain',
+      justifyContent: 'center'
+    },
     profileImg: {
       width: '100%',
-      height: heightPercentage(90),
+      height: heightPercentage(85),
       resizeMode: 'contain',
       // marginTop: 10,
     },
     name: {
       fontSize: fontPercentage(22),
+      fontFamily: 'GmarketSansTTFBold',
     },
     content: {
-      fontSize: fontPercentage(15),
+      fontSize: fontPercentage(17),
       marginTop: heightPercentage(5),
+      fontFamily: 'NanumSquareR'
     },
     achTitle: {
       marginLeft: widthPercentage(15),
       marginVertical: heightPercentage(10),
       fontSize: fontPercentage(20),
+      fontFamily: 'GmarketSansTTFBold',
     },
     progressSection: {
       alignContent: 'center',
@@ -176,6 +185,7 @@ const MyPageScreen = ({ navigation }) => {
     },
     progressText: {
       fontSize: fontPercentage(17),
+      fontFamily: 'NanumSquareR'
     },
     progress: {
       width: '90%',
@@ -192,9 +202,8 @@ const MyPageScreen = ({ navigation }) => {
       <View style={styles.myPageContent}>
         <View style={styles.profileContent}>
           <View style={styles.iconImg}>
-            <ImageBackground source={medal} style={{ width: "100%", height: "100%", justifyContent: 'center' }}>
-              <Image source={img} style={styles.profileImg} />
-            </ImageBackground>
+            <Image source={medal} style={styles.medalImg} />
+            <Image source={img} style={styles.profileImg} />
           </View>
           <Text style={styles.name}>{userInfo.userName}</Text>
           <Text style={styles.content}>{userInfo.userContent}</Text>

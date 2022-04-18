@@ -57,6 +57,7 @@ const RankScreen = ({ navigation }) => {
       fontSize: fontPercentage(27),
       marginLeft: widthPercentage(15),
       marginTop: heightPercentage(10),
+      fontFamily: 'GmarketSansTTFBold',
     },
     noneContainer: {
       flex: 1,
@@ -71,11 +72,12 @@ const RankScreen = ({ navigation }) => {
     noneText: {
       fontSize: fontPercentage(18),
       marginTop: heightPercentage(10),
+      fontFamily: 'NanumSquareR'
     }
   });
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>랭킹</Text>
+      <Text style={styles.title}>⭐랭킹⭐</Text>
         {ranks.length > 0 ? (
         <ScrollView>
           <FlatList

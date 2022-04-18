@@ -15,6 +15,7 @@ const AchievementList = ({ questContent }) => {
           fontSize: fontPercentage(17),
           paddingHorizontal: widthPercentage(20),
           paddingVertical: heightPercentage(20),
+          fontFamily: 'NanumSquareR'
         },
       });
 

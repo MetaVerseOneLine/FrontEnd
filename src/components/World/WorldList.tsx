@@ -45,7 +45,7 @@ const WorldList = ({worldIdx, worldName, worldImg, worldCategory}) => {
         <View style={styles.container}>
             <Card>
                 <Card.Cover source={img} style={{ width: widthPercentage(150), height: heightPercentage(130), resizeMode: 'contain' }}/>
-                <Title style={{marginTop: heightPercentage(10), marginLeft: widthPercentage(3), fontSize: fontPercentage(16)}}>{worldName}</Title>
+                <Title style={{marginTop: heightPercentage(10), marginLeft: widthPercentage(3), fontSize: fontPercentage(16), fontFamily: 'NanumSquareR'}}>{worldName}</Title>
             </Card>
         </View>
     );
