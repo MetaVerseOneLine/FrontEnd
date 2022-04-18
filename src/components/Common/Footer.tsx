@@ -31,7 +31,7 @@ const Footer = ({ navigation }) => {
 
   const styles = StyleSheet.create({
     container: {
-      height: heightPercentage(90),
+      height: heightPercentage(80),
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#FFFFFF',
@@ -43,7 +43,7 @@ const Footer = ({ navigation }) => {
       position: 'absolute',
       top: heightPercentage(30),
       backgroundColor: '#FFFFFF',
-      height: heightPercentage(90),
+      height: heightPercentage(80),
       width: '100%',
       alignItems: 'center',
       justifyContent: 'center',

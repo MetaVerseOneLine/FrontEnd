@@ -73,7 +73,7 @@ const HomeScreen = ({ navigation, Login }) => {
     },
     img: {
       width: '100%',
-      height: heightPercentage(250),
+      height: heightPercentage(220),
       resizeMode: 'contain',
       margin: 0,
       padding: 0,
@@ -82,10 +82,12 @@ const HomeScreen = ({ navigation, Login }) => {
       fontSize: fontPercentage(20),
       alignItems: 'flex-start',
       marginLeft: widthPercentage(40),
+      marginTop: heightPercentage(15),
+      fontFamily: 'GmarketSansTTFBold',
     },
     list: {
       marginHorizontal: widthPercentage(20),
-      marginVertical: heightPercentage(20),
+      marginVertical: heightPercentage(15),
       flex: 1,
     },
   });

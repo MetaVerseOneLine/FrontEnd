@@ -422,6 +422,7 @@ const RegisterScreen = ({ navigation }) => {
             alignItems: "center",
             width: widthPercentage(45),
             height: heightPercentage(25),
+            resizeMode: 'contain',
             marginHorizontal: widthPercentage(10),
             marginVertical: heightPercentage(10),
         },
@@ -457,7 +458,7 @@ const RegisterScreen = ({ navigation }) => {
             borderColor: 'black',
             borderWidth: 1,
             paddingBottom: heightPercentage(10),
-            height: heightPercentage(40),
+            height: heightPercentage(35),
             width: widthPercentage(225),
         },
         header: {

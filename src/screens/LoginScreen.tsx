@@ -73,6 +73,7 @@ const LoginScreen = ({ navigation }) => {
             alignItems: "center",
             width: widthPercentage(180),
             height: heightPercentage(100),
+            resizeMode: 'contain',
         },
         logo: {
             marginTop: heightPercentage(7),

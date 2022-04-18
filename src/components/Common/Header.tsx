@@ -14,13 +14,14 @@ function Header({ navigation }) {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
+      marginBottom: heightPercentage(5),
     },
     touchArea: {
       // paddingTop: 15,
     },
     img: {
-      width: widthPercentage(100),
-      height: heightPercentage(50),
+      width: widthPercentage(80),
+      height: heightPercentage(40),
       resizeMode: 'contain',
     },
     logo: {

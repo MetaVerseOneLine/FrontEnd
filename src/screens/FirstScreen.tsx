@@ -34,6 +34,7 @@ const FirstScreen = ({ navigation }) => {
             alignItems: "center",
             width: widthPercentage(220),
             height: heightPercentage(140),
+            resizeMode: 'contain',
         },
         logo: {
             marginTop: heightPercentage(7),

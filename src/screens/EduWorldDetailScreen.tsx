@@ -91,19 +91,24 @@ const WorldDetailScreen = ({ route, navigation }) => {
     },
     nameText: {
         fontSize: fontPercentage(30),
-        color: '#333333',
+        color: '#444444',
+        fontFamily: 'GmarketSansTTFBold',
     },
     contentTitle: {
       fontSize: fontPercentage(20),
       marginTop: heightPercentage(25),
+      fontFamily: 'GmarketSansTTFBold',
     },
     contentText: {
       fontSize: fontPercentage(18),
       marginTop: heightPercentage(10),
+      marginHorizontal: heightPercentage(5),
+      fontFamily: 'NanumSquareR',
     },
     questTitle: {
       fontSize: fontPercentage(20),
       marginTop: heightPercentage(15),
+      fontFamily: 'GmarketSansTTFBold',
     },
     listContainer: {
       marginTop: heightPercentage(20),
@@ -121,6 +126,7 @@ const WorldDetailScreen = ({ route, navigation }) => {
     noneText: {
       fontSize: fontPercentage(18),
       marginTop: heightPercentage(10),
+      fontFamily: 'NanumSquareR'
     },
     playButton: {
       alignItems: 'center',

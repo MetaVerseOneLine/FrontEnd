@@ -35,9 +35,11 @@ const RankList = ({ userId, userName, worldName, score, rank, firstUserId, first
         rankTitle: {
             fontSize: fontPercentage(20),
             marginVertical: heightPercentage(12),
+            fontFamily: 'GmarketSansTTFBold',
         },
         rankText: {
             fontSize: fontPercentage(17),
+            fontFamily: 'NanumSquareR'
         }
       });
 
