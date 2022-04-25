@@ -164,9 +164,9 @@ const WorldDetailScreen = ({ route, navigation }) => {
                 <View style={{width: 200, height: 50}}>
                   <Button
                     title={'플레이'}
-                    // onPress={() => {
-                    //   this.setState({isVisible: true});
-                      // }}
+                    onPress={() => {
+                      navigation.navigate('Empty', {worldIndex: '2'});
+                    }}
                     color={'#4641D9'}
                   />
                 </View>

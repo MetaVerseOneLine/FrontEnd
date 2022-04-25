@@ -3,10 +3,10 @@
 buildscript {
     ext {
         buildToolsVersion = "30.0.2"
-        minSdkVersion = 21
+        minSdkVersion = 22
         compileSdkVersion = 31
         targetSdkVersion = 30
-        ndkVersion = "21.4.7075529"
+        ndkVersion = "21.3.6528147"
     }
     repositories {
         google()
@@ -21,6 +21,10 @@ buildscript {
 
 allprojects {
     repositories {
+        flatDir {
+            dirs "$rootDir/app/libs"
+        }
+
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url("$rootDir/../node_modules/react-native/android")
