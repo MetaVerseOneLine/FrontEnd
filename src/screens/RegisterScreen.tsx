@@ -48,13 +48,9 @@ const RegisterScreen = ({ navigation }) => {
             userContent: profile,
             userImg: image,
         }).then(
-            //localstorage에 저장해야한다.
             res => {
                 console.log("OK")
                 if (res.data.statusCode == 201) {
-                    AsyncStorage.setItem('asyncUserId', id, () => { //
-                        console.log('유저 id저장')
-                    });
                     alert('성공')
                     navigation.navigate('Login')
                 }
@@ -188,22 +184,22 @@ const RegisterScreen = ({ navigation }) => {
             var img;
             if (img1) {
                 img = 'img1';
-                setImage('1');
+                setImage('2');
             } else if (img2) {
                 img = 'img2';
-                setImage('2');
+                setImage('3');
             } else if (img3) {
                 img = 'img3';
-                setImage('3');
+                setImage('4');
             } else if (img4) {
                 img = 'img4';
-                setImage('4');
+                setImage('5');
             } else if (img5) {
                 img = 'img5';
-                setImage('5');
+                setImage('6');
             } else if (img6) {
                 img = 'img6';
-                setImage('6');
+                setImage('7');
             }
             else {
                 setImage('1')
